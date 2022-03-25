@@ -1,30 +1,58 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div class="wrapper">
+    <MainLayout></MainLayout>
   </div>
-  <router-view/>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+import MainLayout from '@/layouts/MainLayout'
 
-#nav {
-  padding: 30px;
+export default {
+  components: {
+    MainLayout,
+  },
 }
+</script>
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+<style lang="scss">
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;900&display=swap&subset=cyrillic-ext');
+  body{
+    font-family: "Roboto"!important;
+    background: #E5E5E5!important;
+  }
+  .img-fluid {
+    position: relative;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    object-fit: cover
+  } 
+  a{
+    text-decoration: none!important;
+    color: #000!important;
+  }
+  .wrapper {
+      width: 100%;
+      min-height: 100%;
+      max-width: 1600px;
+      overflow: hidden;
+      padding: 20px 40px;
+      margin: 0 auto;
+  }
+  .border-ctn{
+    border-radius: 10px;
+  }
+  .mobile-hide{
+    display: block;
+  }
+  @media screen and(max-width: 576px){
+  .mobile-hide{
+    display: none !important;
+  }
 }
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+@media screen and(max-width: 576px){
+  .wrapper{
+    padding: 0;
+  }
 }
 </style>

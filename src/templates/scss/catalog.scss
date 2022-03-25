@@ -1,0 +1,111 @@
+.selector{
+    &__banner{
+        box-sizing: border-box;
+        border-radius: 10px;
+        width: 100%;
+        margin-top: 1rem;
+        display: flex;
+        border: 0.5px solid #D6D2D2;
+    }
+    &__banner_text{
+        display: flex;
+        flex-direction: column;
+        padding: 0 0.8rem;
+        justify-content: center;
+        font-size: 0.8rem;
+        flex: 0 0 66.66%;
+    }
+    &__banner-icon{
+        display: flex;
+        justify-content: center;
+        flex: 0 0 33.33%;
+    }
+    &__icon{
+        position: relative;
+        width: 100%;
+        max-height: 200px;
+
+    }
+    &__item{
+        box-sizing: border-box;
+        border-radius: 10px;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        border: 0.5px solid #D6D2D2;
+        justify-content: space-between;
+    }
+    &__item-text{
+        display: flex;
+        flex-direction: column;
+        padding: 0 0.8rem;
+        justify-content: center;
+        font-size: 0.8rem;
+        flex: 0 0 66.66%;
+
+    }
+    &__item-icon{
+        display: flex;
+        flex: 0 0 33.33%;
+        justify-content: center;
+    }
+}
+
+.catalog{
+    column-count: 4;
+    column-gap: normal;
+    background: #FFFFFF;
+    border: 1px solid #D6D4D2;
+    box-sizing: border-box;
+    border-radius: 20px;
+    margin-top: 1rem;
+    padding: 1rem 1.5rem;
+    &__letter{
+        font-weight: 500;
+        font-size: 1.5rem;
+        color: #505050;
+    }
+    &__item-link{
+        font-size: 1rem;
+        text-decoration: none;
+        color: #505050;
+    }
+}
+
+.aquamarine{
+    background: #D4FFF5;
+}
+.pink{
+    background: #FFD0D0;
+}
+.light-green{
+    background: #CDFFAE;
+}
+.blue{
+    background: #AFF1FF;
+}
+.peach{
+    background: #FFE0BB;
+}
+
+@media screen and(max-width: 576px){
+    .selector{
+        &__item{
+            flex-direction: column-reverse;
+
+        }
+        &__icon{
+            max-height: 105px;
+        }
+        &__item-text{
+            flex: 0;    
+            text-align: center;
+        }
+        &__item-icon{
+            flex: 0;
+        }
+    }
+    .catalog{
+        column-count: 1;
+    }
+}

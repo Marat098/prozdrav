@@ -8,13 +8,77 @@ const routes = [
     component: Home
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
+    path: '/article',
+    name: 'Article',
+    meta: {layout: 'main'},
+    component: () => import('../views/Article.vue')
+  },
+  {
+    path: '/catalog',
+    name: 'Catalog',
+    meta: {layout: 'main'},
+    component: () => import('../views/Catalog.vue')
+  },
+  {
+    path: '/doctors',
+    name: 'Doctors',
+    meta: {layout: 'main'},
+    component: () => import('../views/Doctors.vue')
+  },
+  {
+    path: '/doc-profile',
+    name: 'DocProfile',
+    meta: {layout: 'main'},
+    component: () => import('../views/DocProfile.vue')
+  },
+  {
+    path: '/clinics',
+    name: 'Clinics',
+    meta: {layout: 'main'},
+    component: () => import('../views/Сlinics.vue')
+  },
+  {
+    path: '/clinic-profile',
+    name: 'ClinicProfile',
+    meta: {layout: 'main'},
+    component: () => import('../views/ClinicProfile.vue')
+  },
+  {
+    path: '/medical-directory',
+    name: 'MedicalDirectory',
+    meta: {layout: 'main'},
+    component: () => import('../views/MedicalDirectory.vue')
+  },
+  {
+    path: '/disease-directory',
+    name: 'DiseaseDirectory',
+    meta: {layout: 'main'},
+    component: () => import('../views/DiseaseDirectory.vue')
+  },
+  {
+    path: '/disease-article',
+    name: 'DiseaseArticle',
+    meta: {layout: 'main'},
+    component: () => import('../views/DiseaseArticle.vue')
+  },
+  {
+    path: '/promotions',
+    name: 'Promotions',
+    meta: {layout: 'main'},
+    component: () => import('../views/Promotions.vue')
+  },
+  // {
+  //   path: '/promotion-category',
+  //   name: 'PromotionCategory',
+  //   meta: {layout: 'main'},
+  //   component: () => import('../views/PromotionCategory.vue')
+  // },
+  {
+    path: '/promotion-profile',
+    name: 'PromotionProfile',
+    meta: {layout: 'main'},
+    component: () => import('../views/PromotionProfile.vue')
+  },
 ]
 
 const router = createRouter({
