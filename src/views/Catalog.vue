@@ -166,13 +166,13 @@ export default {
     background-repeat: no-repeat;
     background-size: cover;
     height: 622px;
-    border-radius: 10px;
-    margin-top: 20px;
+    border-radius: $main-border-radius;
+    margin-top: $margin-xl;
     &__title-wrap{
-        border-radius: 10px;
+        border-radius: $main-border-radius;
         margin: 0;
-        background: white;
-        padding: 40px 48px;
+        background: $main-bg-color;
+        padding: $padding-xxl $padding-xxl-2;
         position: absolute;
         top: 75%;
         width: 80%;
@@ -181,16 +181,16 @@ export default {
         transform: translate(-50%, -50%);
     }
     &__title{
-        font-weight: 700;
-        font-size: 36px;
-        line-height: 140%;
-        color: #444BD3;
+        font-weight: $font-weigth-lg;
+        font-size: $font-size-xxl;
+        line-height: $line-height-1;
+        color: $color-text-catalog;
     }
     &__sub-title{
-        font-weight: 400;
-        font-size: 18px;
-        line-height: 180%;
-        color: rgba(18, 17, 39, 0.6);
+        font-weight: $font-weigth-sm;
+        font-size: $font-size-md_1;
+        line-height: $line-height-4;
+        color: $description-font-color;
     }
 }
 
@@ -200,18 +200,18 @@ export default {
     background: #FFFFFF;
     border: 1px solid #D6D4D2;
     box-sizing: border-box;
-    border-radius: 20px;
-    margin-top: 1rem;
-    padding: 1rem 1.5rem;
+    border-radius: $xl-border-radius;
+    margin-top: $margin-xl;
+    padding: $padding-xl;
     &__letter{
-        font-weight: 500;
-        font-size: 1.5rem;
-        color: #444BD3;
+        font-weight: $font-weigth-md;
+        font-size: $font-size-xl;
+        color: $color-text-catalog;
     }
     &__item-link{
-        font-size: 1rem;
+        font-size: $font-size-md_2;
         text-decoration: none;
-        color: #505050;
+        color: $color-text-catalog-1!important;
     }
 }
 

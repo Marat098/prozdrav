@@ -316,17 +316,17 @@ export default {
     background-image: url("~@/assets/images/unsplash_Ta3f1ZcCgWg.png");
     background-position: right center;
     position: relative;
-    background-color: #5ca1ce;
+    background-color: $bg-color-7;
     background-repeat: no-repeat;
     background-size: cover;
     height: 512px;
-    border-radius: 10px;
-    margin-top: 20px;
+    border-radius: $main-border-radius;
+    margin-top: $margin-xl;
     &__title-wrap{
-        border-radius: 10px;
+        border-radius: $main-border-radius;
         margin: 0;
         background: white;
-        padding: 40px 48px;
+        padding: $padding-xxl $padding-xxl-2;
         position: absolute;
         top: 50%;
         width: 80%;
@@ -336,96 +336,96 @@ export default {
         display: flex;
     }
     &__title{
-        font-weight: 700;
-        font-size: 36px;
-        line-height: 140%;
-        color: #121127;
+        font-weight: $font-weigth-lg;
+        font-size: $font-size-xxl;
+        line-height: $line-height-1;
+        color: $main-text-color;
         display: flex;
         flex-direction: column;
         flex: 0 0 75%;
         align-self: center;
         p{
-            font-weight: 600;
-            font-size: 18px;
+            font-weight: $font-weigth-lg-1;
+            font-size: $font-size-md_1;
             line-height: 170%;
             letter-spacing: 0.8px;
             text-transform: uppercase;
-            color: #FF8C67;
+            color: $promo-main-color;
         }
     }
     &__sub-title{
-        font-weight: 400;
-        font-size: 18px;
+        font-weight: $font-weigth-sm;
+        font-size: $font-size-md_1;
         line-height: 180%;
         color: rgba(0, 0, 0, 0.6);
     }
 }
 .promo-category{
-    background-color: #FFFFFF;
-    padding: 20px;
-    margin-top: 20px;
+    background-color: $main-bg-color;
+    padding: $padding-xl;
+    margin-top: $margin-xl;
     display: flex;
     justify-content: space-between;
     width: 100%;
-    border-radius: 10px;
+    border-radius: $main-border-radius;
     &__title{
-        font-weight: 700;
-        font-size: 36px;
-        line-height: 140%;
-        color: #121127
+        font-weight: $font-weigth-lg;
+        font-size: $font-size-xxl;
+        line-height: $line-height-1;
+        color: $main-text-color;
     }
 }
 
 .promo-list{
     display: flex;
-    gap: 20px;
-    margin-top: 20px;
+    gap: $gap-xl;
+    margin-top: $margin-xl;
 }
 
 .promo-item{
     width: 25%;
-    background-color: #FFFFFF;
-    border-radius: 10px;
+    background-color: $main-bg-color;
+    border-radius: $main-border-radius;
     &__body{
 
-        padding: 20px;
+        padding: $padding-xl;
     }
     &__percent{
-        font-weight: 600;
-        font-size: 14px;
+        font-weight: $font-weigth-lg-1;
+        font-size: $font-size-md_3;
         line-height: 170%;
         letter-spacing: 0.8px;
         text-transform: uppercase;
-        color: #FF8C67;
-        margin-bottom: 10px;
+        color: $promo-main-color;
+        margin-bottom: $margin-md_1;
     }
     &__title{
-        font-weight: 700;
-        font-size: 20px;
+        font-weight: $font-weigth-lg;
+        font-size: $font-size-lg;
         line-height: 140%;
-        color: #121127;
-        margin-bottom: 10px;
+        color: $main-text-color;
+        margin-bottom: $margin-md_1;
         height: 56px;
         overflow: hidden;
     }
     &__description{
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 180%;
-        color: rgba(18, 17, 39, 0.6);
+        font-weight: $font-weigth-sm;
+        font-size: $font-size-md_2;
+        line-height: $line-height-4;
+        color: $description-font-color;
         height: 110px;
         overflow: hidden;
-        margin-bottom: 20px;
+        margin-bottom: $margin-xl;
     }
     &__category{
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 180%;
-        color: #FF8C67;
+        font-weight: $font-weigth-sm;
+        font-size: $font-size-md_3;
+        line-height: $line-height-4;
+        color: $promo-main-color;
         span{
-            padding: 5px 16px;
+            padding: $padding-sm $padding-lg;
             background: rgba(255, 140, 103, 0.2);
-            border-radius: 100px;
+            border-radius: $xxl-border-radius;
         }
     }
 }
@@ -447,8 +447,8 @@ export default {
     background: #FFE0BB;
 }
 .btn-primary{
-    background: #FF8C67;
-    border-radius: 8px;
+    background: $promo-main-color;
+    border-radius: $md-border-radius;
 }
 
 @media screen and(max-width: 576px){

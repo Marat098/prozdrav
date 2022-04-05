@@ -50,7 +50,7 @@ export default {
     align-self: center
 }
 .icon-arrow{
-    margin-left: 10px;
+    margin-left: $margin-md_1;
     width: 12px;
     height: 12px;
 }

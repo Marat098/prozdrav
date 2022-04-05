@@ -16,27 +16,31 @@
                       <li>Why consistent writing makes you a better designer</li>
                       <li>Why consistent writing makes you a better designer</li>
                     </ul>
-                    <iframe
-                        class="youtube-media" 
-                        width="560" 
-                        height="408" 
-                        src="https://www.youtube.com/embed/tev0BTf0XW4"
-                        title="YouTube video player" 
+                    <div>
+                      <iframe
+                          class="youtube-media" 
+                          width="560" 
+                          height="408" 
+                          src="https://www.youtube.com/embed/tev0BTf0XW4"
+                          title="YouTube video player" 
+                          frameborder="0" 
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                          allowfullscreen>
+                      </iframe>
+                    </div>
+                    <div>
+                      <iframe 
+                        class="instagram-media" 
+                        id="instagram-embed-0" 
+                        src="https://www.instagram.com/reel/Cbf44bDAEj8/embed/?cr=1&amp;v=14&amp;wp=936&amp;rd=https%3A%2F%2Fwww.zakon.kz&amp;rp=%2F6010111-22-cheloveka-zaboleli-koronavirusom-v-kazakhstane-za-sutki.html#%7B%22ci%22%3A0%2C%22os%22%3A463437.90000000596%2C%22ls%22%3A885.2000000178814%2C%22le%22%3A890.3000000119209%7D" 
+                        allowtransparency="true" 
+                        allowfullscreen="true" 
                         frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                    </iframe>
-                    <iframe 
-                      class="instagram-media" 
-                      id="instagram-embed-0" 
-                      src="https://www.instagram.com/reel/Cbf44bDAEj8/embed/?cr=1&amp;v=14&amp;wp=936&amp;rd=https%3A%2F%2Fwww.zakon.kz&amp;rp=%2F6010111-22-cheloveka-zaboleli-koronavirusom-v-kazakhstane-za-sutki.html#%7B%22ci%22%3A0%2C%22os%22%3A463437.90000000596%2C%22ls%22%3A885.2000000178814%2C%22le%22%3A890.3000000119209%7D" 
-                      allowtransparency="true" 
-                      allowfullscreen="true" 
-                      frameborder="0" 
-                      height="900" 
-                      data-instgrm-payload-id="instagram-media-payload-0" 
-                      scrolling="no">
-                    </iframe>
+                        height = '900'
+                        data-instgrm-payload-id="instagram-media-payload-0" 
+                        scrolling="no">
+                      </iframe>
+                    </div>
                    
                     
                   </div>
@@ -182,22 +186,49 @@
 <script>
 import DoctorCard from '@/components/DoctorCard.vue'
 import ClinicCard from '@/components/ClinicCard.vue'
+import $ from 'jquery'
 export default {
     components:{
       DoctorCard,
       ClinicCard
+    },
+    mounted (){
+      var iframe = document.querySelectorAll('iframe');
+      console.log(iframe[1].contentWindow.document.body.offsetHeight)
+      // console.log(document.querySelectorAll('iframe')[1].contentWindow.document.body.offsetHeight)
+      // var $iframes = $( "iframe" );
+      // // Find & save the aspect ratio for all iframes
+      // $iframes.each(function () {
+      //   $( this ).data( "ratio", this.height / this.width )
+      //     // Remove the hardcoded width & height attributes
+      //     .removeAttr( "width" )
+      //     .removeAttr( "height" );
+      // });
+        
+      // // Resize the iframes when the window is resized
+      // $( window ).resize( function () {
+      //   $iframes.each( function() {
+      //     // Get the parent container's width
+      //     var width = $( this ).parent().width();
+      //     $( this ).width( width )
+      //       .height( width * $( this ).data( "ratio" ) );
+      //   });
+      // // Resize to fix all iframes on page load.
+      // }).resize();
     }
 }
 </script>
 <style lang="scss" scoped>
+html, body{width:100%; height:100%; margin:0}
+
 .article-wrap{
-  background-color: #FFFFFF;
-  border-radius: 10px 10px 0px 0px;
-  margin-bottom: 20px;
+  background-color: $main-bg-color;
+  border-radius: $main-border-radius $main-border-radius 0px 0px;
+  margin-bottom: $margin-xl;
 }
 
 .article-img{
-  margin-bottom: 20px;
+  margin-bottom: $margin-xl;
   img{
     background-repeat: no-repeat;
     transition: .3s;
@@ -211,32 +242,32 @@ export default {
 }
 .article-tags{
 
-  padding: 40px;
+  padding: $padding-xxl;
   display: flex;
   flex-wrap: wrap;
   a{
-    padding: 5px 10px;
+    padding: $padding-sm $padding-md;
     background-color: rgba(18, 17, 39, 0.8);
-    border-radius: 5px;
-    font-weight: 400;
-    font-size: 14px;
+    border-radius: $sub-border-radius;
+    font-weight: $font-weigth-sm;
+    font-size: $font-size-md_2;
     line-height: 21px;
     color: #FFFFFF!important;
-    margin: 0 20px 10px 0; 
+    margin: 0 $margin-xl $margin-md_1 0; 
     
   }
 }
 .instagram-media{
-  background: white;
-  max-width: 540px;
-  width: calc(100% - 2px);
-  border-radius: 3px;
-  border: 1px solid rgb(219, 219, 219);
-  box-shadow: none;
-  display: block;
-  margin: 0 auto;
-  padding: 0px;
-  max-height: 900px;
+  // background: white;
+  // max-width: 540px;
+  // width: calc(100% - 2px);
+  // border-radius: 3px;
+  // border: 1px solid rgb(219, 219, 219);
+  // box-shadow: none;
+  // display: block;
+  // margin: 0 auto;
+  // padding: 0px;
+  // max-height: 900px;
 }
 .youtube-media{
   width: 100%;
@@ -244,14 +275,14 @@ export default {
 .sub-news{
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: $gap-lg;
   &__list{
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    padding: 20px;
-    background-color: #FFFFFF;
-    border-radius: 10px;
+    gap: $gap-xl;
+    padding: $padding-xl;
+    background-color: $main-bg-color;
+    border-radius: $main-border-radius;
   }
   &__item{
     display: flex;
@@ -269,14 +300,14 @@ export default {
   &__description{
     display: flex;
     flex-direction: column;
-    margin-left: 20px;
+    margin-left: $margin-xl;
   }
   &__title{
-    font-weight: 400;
-    font-size: 16px;
+    font-weight: $font-weigth-sm;
+    font-size: $font-size-md_2;
     line-height: 120%;
     text-transform: capitalize;
-    color: #121127;
+    color: $main-text-color;
     p{
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -286,21 +317,21 @@ export default {
     }
   }
   &__date{
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 16px;
-    color: #FFFFFF;
+    font-weight: $font-weigth-sm;
+    font-size: $font-size-md_3;
+    line-height: $line-height-5;
+    color: $color-text-light;
     span{
-      padding: 3px 10px;
-      background: #4AD0D3;
-      border-radius: 5px;
+      padding: $padding-sm-2 $padding-md;
+      background: $time-wrap-bg-color;
+      border-radius: $sub-border-radius;
     }
   }
   &__ad{
     height: 300px;
     max-width: 100%;
     width: 100%;
-    background-color: black;
+    background-color: $bg-color-3;
   }
 }
 </style>

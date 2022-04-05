@@ -9,7 +9,7 @@
             <div>
                 <a 
                 id="descriptionToggle"
-                class="btn collapsed" 
+                class="btn " 
                 data-bs-toggle="collapse" 
                 href="#collapseExample" 
                 role="button" 
@@ -44,18 +44,18 @@ export default {
     box-shadow: unset;
 }
 .collapse-wrap{
-    margin-top: 20px;
-    padding: 20px;
-    border-radius: 10px;
-    background: #FFFFFF;
+    margin-top: $margin-xl;
+    padding: $padding-xl;
+    border-radius: $main-border-radius;
+    background: $main-bg-color;
     display: flex;
     justify-content: flex-end;
 }
 .description-body{
     width: 80%;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 160%;
+    font-weight: $font-weigth-sm;
+    font-size: $font-size-md_3;
+    line-height: $description-line-height;
     letter-spacing: -0.005em;
     color: rgba(18, 17, 39, 0.6);
 }

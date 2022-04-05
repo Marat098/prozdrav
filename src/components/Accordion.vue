@@ -47,25 +47,29 @@ export default {
 </script>
 <style lang="scss" scoped>
 .seo-text{
-    margin-top: 20px;
+    margin-top:$margin-xl;
+}
+.accordion{
+    display: flex;
+    flex-direction: column;
+    gap: $gap-xl;
 }
 .accordion-item{
-    border-radius: 10px;
-    margin-top: 20px;
+    border-radius: $main-border-radius;
     border: none;
 }
 
 .accordion-button{
-    font-weight: 500;
+    font-weight: $font-weigth-md;
 }
 .accordion-button:focus{
     border-color: unset;
     outline: 0;
     box-shadow: none;
-    border-radius: 10px;
+    border-radius: $main-border-radius;
 }
 .accordion-button:not(.collapsed){
-    color: #121127;
+    color: $main-text-color;
     background-color: unset;
     box-shadow: none;
 }

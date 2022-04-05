@@ -59,14 +59,14 @@ export default {
     height: 26px;
 }
 .clinic{
-    margin-top: 20px;
+    margin-top: $margin-xl;
 }
 .clinic-item{
     display: grid;
     grid-template-columns: auto 2fr;
     grid-template-rows: auto auto auto;
-    padding: 20px;
-    background-color: #ffffff;
+    padding: $padding-xl;
+    background-color: $main-bg-color;
 
     &__img-wrap{
         grid-column: 1 / 2;
@@ -74,28 +74,28 @@ export default {
         display: flex;
         text-align: center;
         flex-direction: column;
-        margin-right: 20px;
+        margin-right: $margin-xl;
     }
     &__img{
         width: 130px;
         height: 150px;
-        border-radius: 10px;
+        border-radius: $main-border-radius;
     }
     &__rating{
         border: 1px solid rgba(18, 17, 39, 0.2);
-        border-radius: 5px;
-        padding: 5px 0;
-        margin-top: 10px;
-        font-weight: 400;
-        font-size: 16px;
+        border-radius: $sub-border-radius;
+        padding: $padding-sm 0;
+        margin-top: $margin-md_1;
+        font-weight: $font-weigth-sm;
+        font-size: $font-size-md_2;
         line-height: 100%;
         color: rgba(18, 17, 39, 0.7)
     }
     &__reviews-count{
-        margin-top: 10px;
-        font-weight: 500;
-        font-size: 14px;
-        line-height: 140%;
+        margin-top: $margin-md_1;
+        font-weight: $font-weigth-md;
+        font-size: $font-size-md_3;
+        line-height: $line-height-1;
         color: rgba(18, 17, 39, 0.8);
     }
     &__description{
@@ -104,24 +104,23 @@ export default {
     }
     &__title{
         font-style: normal;
-        font-weight: 500;
-        font-size: 22px;
+        font-weight: $font-weigth-md;
+        font-size: $font-size-xl_1;
         line-height: 115%;
-        color: #414141;
-        margin-bottom: 5px;
+        color: $title-profile-font-color;
+        margin-bottom: $margin-sm;
     }
     &__spec{
-        color: rgba(0, 0, 0, 0.6);
-        margin-bottom: 10px;
+        margin-bottom: $margin-md_1;
         line-height: 115%;
-        color: #121127;
-        font-weight: 400;
+        color: $main-text-color;
+        font-weight: $font-weigth-sm;
     }
     &__description-body{
-        font-weight: 400;
+        font-weight: $font-weigth-sm;
         line-height: 160%;
-        letter-spacing: -0.005em;
-        color: rgba(18, 17, 39, 0.6);
+        letter-spacing: $title-letter-spascing;
+        color: $description-font-color;
     }
 
     &__info{
@@ -132,37 +131,37 @@ export default {
         display: flex;
         width: 75%;
         justify-content: space-between;
-        margin-bottom: 10px;
-        background: #FFFFFF;
+        margin-bottom: $margin-md_1;
+        background: $main-bg-color;
         border: 0.5px solid #D6D2D2;
         box-sizing: border-box;
-        border-radius: 10px;
-        padding: 10px;
+        border-radius: $main-border-radius;
+        padding: $padding-md;
         #price{
-            font-weight: 500;
-            color: #414141;
+            font-weight: $font-weigth-md;
+            color: $title-profile-font-color;
         }
   }
   &__contacts{
-      margin-top: 10px;
+      margin-top: $margin-md_1;
 
   }
   &__contacts-item{
     width: 75%;
-    padding: 10px;
+    padding: $padding-md;
     border: 1px solid rgba(18, 17, 39, 0.2);
     box-sizing: border-box;
-    border-radius: 10px;
+    border-radius: $main-border-radius;
   }
     &__contacts-address{
-        margin-bottom: 10px;
+        margin-bottom: $margin-md_1;
     }
     &__contacts-phone{
-        padding: 8px 16px;
-        background: #444BD3;
-        border-radius: 5px;
-        color: #FFFFFF!important;
-        font-size: 14px;
+        padding: $padding-md-1 $padding-lg;
+        background: $doc-clinic-color;
+        border-radius: $sub-border-radius;
+        color: $color-text-light!important;
+        font-size: $font-size-md_3;
     }
 }
 </style>

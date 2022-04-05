@@ -1,26 +1,30 @@
 <template>
     <section>
         <div class="banner">
-            <div class="banner__title-wrap">
-                <div class="banner__title">
-                    Гинекология
+            <div class="banner__wrap">
+                <div class="banner__title-wrap">
+                    <div class="banner__title">
+                        Справочник болезней
+                    </div>
+                    <div class="banner__sub-title">
+                        Болезни, методы лечения, методы диагностики 
+                    </div>
                 </div>
-                <div class="banner__sub-title">
-                    Болезни, методы лечения, методы диагностики 
+                <div class="banner__search-wrap">
+                    <div class="banner__input-wrap">
+                        <input class="banner__input" type="text" placeholder="Введите название болезни">
+                    </div>
+                    <button class="btn btn-primary" id="search-btn">
+                        Поиск
+                    </button>
                 </div>
             </div>
-            <div class="banner__search-wrap">
-                <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Введите название болезни" aria-label="Введите название болезни" aria-describedby="basic-addon2">
-                <div class="input-group-append">
-                    <button id="search-btn" class="btn btn-primary" type="button"> Поиск </button>
-                </div>
-                </div>
-            </div>
-
         </div>
     </section>
     <section>
+        <SubTitle textColor = textColor  title="Аллергологи в Алматы"></SubTitle>
+        <Description description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Iaculis sit enim nullamius pellentesque eleifend. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Iaculius varius pellentesque eleifend. Lorem ipsum dolor sit amet, consectetur adipiscing elIaculis sit enim nullam pretium ridiculus aenean sed. Sed morbi elit massa ut metus varius pellentesque eleifend. "></Description>
+
         <div class="catalog">
             <div class="catalog__group">
                 <div class="catalog__title" v-for="(value, name) in list" :key="name">
@@ -41,12 +45,17 @@
 </template>
 <script>
 import SeoText from '@/components/SeoText.vue'
+import SubTitle from '@/components/SubTitle.vue'
+import Description from '@/components/Description.vue'
 export default {
     components: {
-        SeoText
+        SeoText,
+        SubTitle,
+        Description
     },
     data() {
         return {
+            textColor: "#121127",
             list: {
                 "А": [
                     "Акушер-гинеколог",
@@ -167,80 +176,115 @@ export default {
 </script>
 <style lang="scss" scoped>
 #search-btn{
-    background: #7773FF;
-    border-radius: 8px;
+    background: $bg-color-6;
+    border-radius: $md-border-radius;
+    border-color: $bg-color-6;
 }
 .form-control{
     border: 1px solid rgba(18, 17, 39, 0.12);
     box-sizing: border-box;
-    border-radius: 8px;
+    border-radius: $md-border-radius!important;
     background: rgba(115, 247, 255, 0.2);
-    margin-right: 16px;
-    font-size: 14px;
+    margin-right: $margin-xl-1;
+    font-size: $font-size-md_3;
     line-height: 180%;
-    color: rgba(18, 17, 39, 0.6);
+    color: $description-font-color;
 }
+.form-control:focus{
+    box-shadow: unset;
+}
+
 
 .banner{
     background-position: right center;
-    position: relative;
     background: rgba(115, 247, 255, 0.2);
     background-repeat: no-repeat;
     background-size: cover;
     height: 235px;
-    border-radius: 10px;
-    margin-top: 20px;
+    max-width: 100%;
+    border-radius: $main-border-radius;
+    margin-top: $margin-xl;
+
+    &__wrap{
+        height: 100%;
+        display: flex;
+        padding: 0 $padding-xxl-1;
+        justify-content: space-between;
+        align-items: center;
+
+    }
     &__title-wrap{
-        border-radius: 10px;
-        margin: 0;
-        position: absolute;
-        top: 50%;
-        left: 35%;
-        margin-right: -50%;
-        transform: translate(-50%, -50%);
+
     }
     &__title{
-        font-weight: 700;
-        font-size: 36px;
-        line-height: 140%;
-        color: #121127;
+        font-weight: $font-weigth-lg;
+        font-size: $font-size-xxl-4;
+        line-height: $line-height-1;
+        color: $main-text-color;
     }
     &__sub-title{
-        font-weight: 400;
-        font-size: 18px;
-        line-height: 180%;
-        color: rgba(18, 17, 39, 0.6);
+        font-weight: $font-weigth-sm;
+        font-size: $font-size-md_3;
+        line-height: $line-height-4;
+        color: $description-font-color;
     }
     &__search-wrap{
-        border-radius: 10px;
-        margin: 0;
-        width: 28%;
-        position: absolute;
-        top: 50%;
-        right: 50%;
-        margin-right: -50%;
-        transform: translate(-50%, -50%);
+        display: flex;
+        flex: 0 0 40%;
+        justify-content: end;
+        
     }
+    &__input-wrap{
+        flex: 0 0 70%;
+        margin-right: $margin-md_1;
+    }
+    &__input{
+        border: 1px solid rgba(18, 17, 39, 0.12);
+        box-sizing: border-box;
+        border-radius: 8px;
+        background: rgba(115, 247, 255, 0.2);
+        width: 100%;
+        height: 100%;
+        font-size: $font-size-md_3;
+        padding: $padding-md;
+        color: $color-text-catalog-1;   
+    }
+     &__input:focus-visible{
+        outline: none!important;
+     }
 }
 
+.title-spec{
+    padding: $padding-xl;
+    margin-top: $margin-xl;
+    background: $main-bg-color;
+    border-radius: $main-border-radius;
+    span{
+        font-weight: $font-weigth-lg;
+        font-size: $font-size-xxl-4;;
+        line-height: $line-height-1;
+        color: $main-text-color;
+    }
+    
+}
 .catalog{
     column-count: 4;
     column-gap: normal;
     background: #FFFFFF;
     border: 1px solid #D6D4D2;
     box-sizing: border-box;
-    border-radius: 20px;
-    margin-top: 1rem;
-    padding: 1rem 1.5rem;
+    border-radius: $xl-border-radius;
+    margin-top: $margin-xl;
+    padding: $padding-xl;
     &__letter{
-        font-weight: 500;
-        font-size: 1.5rem;
-        color: #444BD3;
+        font-weight: $font-weigth-md;
+        font-size: $font-size-md_1;
+        color: $color-text-catalog;
     }
     &__item-link{
-        font-size: 1rem;
+        font-size: $font-size-md_3;
         text-decoration: none;
-        color: #505050;
+        color: $color-text-catalog-1!important;
     }
 }
 
@@ -262,6 +306,44 @@ export default {
 .peach{
     background: #FFE0BB;
 }
+@media screen and(min-width: 1200px){
+    .banner{
+        &__wrap{
+            justify-content: space-evenly;
+        }
+    }
+}
+@media screen and(max-width: 768px){
+    .banner{
+        min-height: 300px;
+        justify-content: start;
+        &__wrap{
+            flex-direction: column;
+            padding: $padding-xxl;
+        }
+        &__title-wrap{
+            margin-bottom: $margin-xxl;
+        }
+        &__title{
+            text-align: center;
+        }
+        &__sub-title{
+            text-align: center;
+        }
+        &__search-wrap{
+            flex-direction: column;
+            width: 100%;
+            flex: 0 0 0;
+            max-width: 350px;    
+        }
+        &__input-wrap{
+            margin: 0;
+        }
+        &__input{
+            height: auto;
+         }
+    }
+}
 
 @media screen and(max-width: 576px){
     .selector{
@@ -280,7 +362,7 @@ export default {
         }
     }
     .catalog{
-        column-count: 1;
+        column-count: 2;
     }
 }
 </style>

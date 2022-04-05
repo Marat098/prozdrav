@@ -5,7 +5,14 @@ const routes = [
   {
     path: '/',
     name: 'Home',
+    meta: {layout: 'main'},
     component: Home
+  },
+  {
+    path: '/admin',
+    name: 'Admin',
+    meta: {layout: 'admin'},
+    component: () => import('../views/Admin.vue')
   },
   {
     path: '/article',
@@ -67,18 +74,13 @@ const routes = [
     meta: {layout: 'main'},
     component: () => import('../views/Promotions.vue')
   },
-  // {
-  //   path: '/promotion-category',
-  //   name: 'PromotionCategory',
-  //   meta: {layout: 'main'},
-  //   component: () => import('../views/PromotionCategory.vue')
-  // },
   {
     path: '/promotion-profile',
     name: 'PromotionProfile',
     meta: {layout: 'main'},
     component: () => import('../views/PromotionProfile.vue')
   },
+
 ]
 
 const router = createRouter({

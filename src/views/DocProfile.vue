@@ -126,19 +126,19 @@ export default {
 
 <style lang="scss" >
 #count{
-    color: #444BD3;
+    color: $color-text-catalog;
 }
 #doc-show-more{
     width: 100%;
-    background-color: #444BD3;
+    background-color: $bg-color-1;
 }
 .doc{
-    margin-top: 20px;
+    margin-top: $margin-xl;
     &__ad{
         width: 100%;
         height: 294px;
         background: chocolate;
-        border-radius: 10px;
+        border-radius: $main-border-radius;
     }
     &__media{
         width: 100%;
@@ -148,24 +148,24 @@ export default {
     }
 }
 .accordion-item{
-    border-radius: 10px;
-    margin-top: 20px;
+    border-radius: $main-border-radius;
+    margin-top: $margin-xl;
     border: none;
-    letter-spacing: -0.005em;
-    color: rgba(18, 17, 39, 0.6);
+    letter-spacing: $title-letter-spascing;
+    color: $description-font-color;
 }
 
 .accordion-button{
-    font-weight: 500;
+    font-weight: $font-weigth-md;
 }
 .accordion-button:focus{
     border-color: unset;
     outline: 0;
     box-shadow: none;
-    border-radius: 10px;
+    border-radius: $main-border-radius;
 }
 .accordion-button:not(.collapsed){
-    color: #121127;
+    color: $main-text-color;
     background-color: unset;
     box-shadow: none;
 }
@@ -178,20 +178,20 @@ export default {
 }
 .services-item{
     width: 80%;
-    padding: 15px 20px;
-    margin-top: 10px;
-    background: #FFFFFF;
+    padding: $padding-lg-1 $padding-xl;
+    margin-top: $margin-md_1;
+    background: $main-bg-color;
     border: 1px solid rgba(18, 17, 39, 0.2);
-    border-radius: 10px;    
+    border-radius: $main-border-radius;    
 }
 .about-doctor{
     width: 60%;
 }
 .reviews-title{
-    background-color: #FFFFFF;
-    padding: 20px;
-    font-weight: 500;
-    border-radius: 10px;
+    background-color: $main-bg-color;
+    padding: $padding-xl;
+    font-weight: $font-weigth-md;
+    border-radius: $main-border-radius;
 }
 
 </style>

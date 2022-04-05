@@ -1,52 +1,67 @@
 <template>
+  <div class="wrapper">
     <div class="container-fluid">
         <header id="header">
           <div class="header border-ctn">
             <div class="row">
-              <div class="col-md-3 col-lg-3">
-                <div class="header__icon-wrap">
-                  <img src= "fonts/Group219.svg" alt="" class="header__icon" />
+              <div class="col-12">
+                <div class="header__top">
+                  <div class="header__icon-wrap">
+                    <img src= "fonts/Group 330.svg" alt="" class="header__icon" />
+                  </div>
+                  <div class="header__cities">
+                      <button
+                        id = "current-city" 
+                        type="button" 
+                        class="btn btn-primary" 
+                        data-bs-toggle="dropdown" 
+                        aria-expanded="false">
+                        <img src="fonts/Pin.svg" alt="">
+                        Алматы
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Алматы</a></li>
+                        <li><a class="dropdown-item" href="#">Астана</a></li>
+                        <li><a class="dropdown-item" href="#">Караганда</a></li>
+                        <li><a class="dropdown-item" href="#">Шымкент</a></li>
+                      </ul>
+
+                  </div>
+
                 </div>
               </div>
-              <div class="col-md-8 col-lg-7 ">
-                <nav class="header__nav">
-                  <ul class="menu" id="menu">
-                    <li class="menu__item"><router-link to="/">Новости</router-link></li>
-                    <li class="menu__item"><router-link to="/disease-directory">Справочник</router-link></li>
-                    <li class="menu__item"><router-link to="/catalog">Доктора</router-link></li>
-                    <li class="menu__item"><router-link to="/promotions">Акции</router-link></li>
-                  </ul>
-                </nav>
+              <div class="col-12">
+                <div class="header__bottom">
+                  <nav class="header__nav">
+                    <ul class="menu" id="menu">
+                      <li class="menu__item active"><router-link to="/">Новости</router-link></li>
+                      <li class="menu__item"><router-link to="/disease-directory">Справочник болезней</router-link></li>
+                      <li class="menu__item"><router-link to="/catalog">Врачи</router-link></li>
+                      <li class="menu__item"><router-link to="/clinics">Клиники</router-link></li>
+                      <li class="menu__item"><router-link to="/medical-directory">Процедуры</router-link></li>
+                      <li class="menu__item"><router-link to="/medical-directory">Диагностика</router-link></li>
+                      <li class="menu__item"><router-link to="/promotions">Акции</router-link></li>
+                    </ul>
+                  </nav>
+                  <div class="header__search-wrap">
+                    <div class="input-wrap">
+                      <img src="fonts/Search.svg" alt="">
+                      <input class="header__search-input" type="text" name="query" placeholder="Поиск по сайту">
+                    </div>
+                  </div>
+                </div>
+
+
               </div>
             </div>
-            <div class="header__mobile-menu">
-              <div class="header__mobile-sidebar">
-                <nav class="header__mobile-nav">
-                  <a href="/"
-                    ><img src="fonts\world-news 1.svg" alt="" />
-                    <span>Новости</span></a
-                  >
-                  <a href="/disease-directory"
-                    ><img src="fonts\article 1.svg" alt="" />
-                    <span>Справочник</span></a
-                  >
-                  <a href="/catalog"
-                    ><img src="fonts\doctor (2) 1.svg" alt="" />
-                    <span>Доктора</span></a
-                  >
-                  <a href="/promotions"
-                    ><img src="fonts\offer 1.svg" alt="" />
-                    <span>Акции</span></a
-                  >
-                </nav>
-              </div>
-            </div>
+
           </div>
         </header>
         <main>
             <router-view/>
         </main>
     </div>
+  </div>
 </template>
 <script>
 export default {
@@ -57,93 +72,95 @@ export default {
   ul,li{
     padding: 0;
   }
-  #menu {
-    margin: 0!important;
+  #current-city{
+    background: $bg-color-2;
+    border-radius: $main-border-radius;
+    padding: $padding-md $padding-xxl-1;
+    color: $main-text-color;
+    border-color: $bg-color-2;
+    font-weight: $font-weigth-sm;
+    font-size: $font-size-md_4;
+    line-height: 120%;
   }
+
   .header {
+
+    background-color: $main-bg-color;
+    padding: $padding-xl $padding-xxl 0 $padding-xxl;
+    margin: $margin-xl 0;
+    &__top{
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 2px solid #12112726;
+      font-weight: normal; 
+      padding-bottom: $padding-xl
+    }
     &__icon-wrap{
       display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-left: 1rem  
+
     }
     &__icon{
-      object-fit: cover;
       max-width: 100%;
+    }
+    &__bottom{
+      padding: $padding-xl 0;
+      display: flex;
+      justify-content: space-between;
     }
     &__nav{
       height: 100%;
       display: flex;
       align-items: center;
-
     }
-    &__mobile-menu{
-      display: none;
-      position: fixed;
-      top: auto;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: auto;
-      padding-top: 0;
-      transition: transform .3s;
-      z-index: 103;
-      background: #FFFFFF;
-      border: 0.5px solid #D6D2D2;
-      border-radius: 20px;
-    }
-    &__mobile-sidebar{
-      box-sizing: initial;
-      width: 100%;
-      height: 61px;
-      padding-bottom: env(safe-area-inset-bottom);
-      background-color: var(--bg-color);
-      border-top: 1px solid var(--gray-color-20);
-      position: relative;
-      flex-direction: column;
-    }
-    &__mobile-nav{
+    &__search-wrap{
       display: flex;
-      flex-wrap: nowrap;
-      margin-top: 3px;
-      margin-left: 0;
-      a{
-        position: relative;
-        display: flex;
-        align-items: center;
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 20px;
-        white-space: nowrap;
-        flex-basis: 25%;
-        flex-direction: column;
-        justify-content: center;
-        text-decoration: none;
-        color: #414141;
-      }
-      span{
-        font-size: 12px;
-      }
+      border: 1px solid #91929D;
+      box-sizing: border-box;
+      border-radius: $main-border-radius;
+      padding: $padding-sm-1 $padding-md;
+    }
+    &__search-input{
+      border: 1px solid transparent;
+      color: $color-text-sr;
+      width: 80%;
+    }
+    &__search-input:focus-visible{
+      outline: none !important;
+    }
+    &__search-input:-webkit-autofill,
+    &__search-input:-webkit-autofill:focus {
+      transition: background-color 600000s 0s, color 600000s 0s;
+    }
+    .input-wrap{
+      width: 100%;
     }
   }
 
   .menu {
     display: flex;
-    justify-content: space-between;
-    width: 100%;
+    margin: 0!important;
+    padding: 0!important;
     &__item{
-      list-style-type: none; 
+      list-style-type: none;
+      margin-right: $margin-lg;
+      a{
+        font-weight: $font-weigth-xl;
+        font-size: $font-size-sm;
+        line-height: $line-height-2;
+        text-transform: uppercase;
+        color: $description-font-color!important;
+      }
     }
-    a{
-      font-weight: 500;
-      font-size: 22px;
-      line-height: 115%;
-      text-decoration: none;
-      color: #414141;
-    }
+    .active{
+        a{
+          text-decoration-line: underline!important;
+          text-transform: uppercase;
+          color: #121127!important;;
+        }
+      }
   }
 
-  @media screen and(max-width: 768px) {
+  @media screen and(max-width: 992px) {
     .header{
       border: 0;
       border-radius: 0;
@@ -152,7 +169,7 @@ export default {
         display: none;
       }
       &__icon{
-        width: 35%;
+        width: 100%;
         height: 100%; 
       }
       &__icon-wrap{
@@ -164,4 +181,20 @@ export default {
 
     }
   }
+    @media screen and(max-width: 1140px) {
+        .menu {
+          &__item{
+            margin-right: $margin-md_1;
+          }
+        }
+    }
 </style>
+
+//  $('document').ready(function() {
+    $('.menu a').each(function() {
+        if ('http://site.ru'+$(this).attr('href') == window.location.href)
+        {
+            $(this).addClass('active');
+        }
+    });
+}); 

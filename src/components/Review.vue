@@ -39,16 +39,16 @@ export default {
 </script>
 <style lang="scss" scoped>
 .review-item{
-    background-color: #FFFFFF;
-    border-radius: 12px;
-    padding: 20px;
-    line-height: 160%;
+    background-color: $main-bg-color;
+    border-radius: $lg-border-radius;
+    padding: $padding-xl;
+    line-height: $description-line-height;
     color: rgba(18, 17, 39, 0.56);
     display: flex;
     flex-wrap: wrap;
     &__body{
         width: 100%;
-        margin-bottom: 10px;
+        margin-bottom: $margin-md_1;
     }
     &__head{
         display: flex;
@@ -57,15 +57,15 @@ export default {
     &__photo-wrap{
         height: 54px;
         width: 54px;
-        margin-right: 10px;
+        margin-right: $margin-md_1;
     }
     &__date-name{
 
     }
     &__name{
-        line-height: 180%;
-        color: #121127;
-        font-weight: 600;
+        line-height: $line-height-4;
+        color: $main-text-color;
+        font-weight: $font-weigth-lg-1;
     }
     &__rating-wrap{
         width: 50%;
@@ -75,12 +75,12 @@ export default {
         
     }
     &__rating{
-        padding: 5px 20px;
+        padding: $padding-sm $padding-xl;
         border: 1px solid rgba(18, 17, 39, 0.2);
-        border-radius: 5px;
-        font-weight: 400;
-        font-size: 20px;
-        line-height: 100%;
+        border-radius: $sub-border-radius;
+        font-weight: $font-weigth-sm;
+        font-size: $font-size-lg;
+        line-height: $line-height-3;
         color: rgba(18, 17, 39, 0.7)
     }
 }

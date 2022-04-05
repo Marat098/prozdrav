@@ -152,28 +152,28 @@ export default {
 <style lang="scss" scoped>
 #doc-show-more{
     width: 100%;
-    background-color: #444BD3;
-    border-radius: 8px;
+    background-color: $color-text-catalog;
+    border-radius: $md-border-radius;
 }
 .clinic-profile{
-    margin-top: 20px;
+    margin-top: $margin-xl;
 }
 .clinic-spec{
-    margin-top: 20px;
-    padding: 20px 20px;
-    background-color: #FFFFFF;
-    border-radius: 10px;
+    margin-top: $margin-xl;
+    padding: $padding-xl;
+    background-color: $main-bg-color;
+    border-radius: $main-border-radius;
     &__title{
-        font-weight: 500;
-        font-size: 20px;
-        line-height: 115%;
+        font-weight: $font-weigth-md;
+        font-size: $font-size-lg;
+        line-height: $line-height-2;
         letter-spacing: 0.8px;
         text-transform: uppercase;
         color: rgba(18, 17, 39, 0.75);
         
     }
     &__list{
-        margin-top: 20px;
+        margin-top: $margin-xl;
         display: flex;
         flex-wrap: wrap;
     }
@@ -181,35 +181,35 @@ export default {
         background: #FFFFFF;
         border: 1px solid rgba(18, 17, 39, 0.12);
         box-sizing: border-box;
-        border-radius: 100px;
-        padding: 10px 20px;
-        margin: 10px 10px 0 0;
+        border-radius: $xxl-border-radius;
+        padding: $padding-md $padding-xl;
+        margin: $margin-md_1 $margin-md_1 0 0;
         display: flex;
         flex-wrap: nowrap;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 140%;
-        color: rgba(18, 17, 39, 0.6);
+        font-weight: $font-weigth-sm;
+        font-size: $font-size-md_2;
+        line-height: $line-height-1;
+        color: $description-font-color;
     }
 }
 
 .clinic-gallery{
-    margin-top: 20px;
+    margin-top: $margin-xl;
     &__head{
         display: flex;
         
     }
     &__title{
-        padding: 20px;
-        background-color: #FFFFFF;
+        padding: $padding-xl;
+        background-color: $main-bg-color;
         width: 90%;
-        border-radius: 10px;
-        font-weight: 600;
-        font-size: 20px;
-        line-height: 28px;
+        border-radius: $main-border-radius;
+        font-weight: $font-weigth-lg-1;
+        font-size: $font-size-lg;
+        line-height: $line-height-6;
         letter-spacing: 0.8px;
         text-transform: uppercase;
-        color: #121127;
+        color: $main-text-color;
     }
     &__btns{
         display: flex;
@@ -218,63 +218,63 @@ export default {
     }
     &__btn{
         height: 48px;
-        border-radius: 100px;
+        border-radius: $xxl-border-radius;
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        padding: 12px 24px;
-        margin: 0px 6px;
+        padding: $padding-lg-2 $padding-xl-1;
+        margin: 0px $margin-sm;
         border:none;
     }
     &__scroll{
         display: flex;
         overflow-x: scroll;
-        padding: 20px;
-        background-color: #FFFFFF;
-        margin-top: 20px; 
-        border-radius: 10px;
+        padding: $padding-xl;
+        background-color: $main-bg-color;
+        margin-top: $margin-xl; 
+        border-radius: $main-border-radius;
     }
     &__scroll::-webkit-scrollbar{
       width: 0;
     }
     &__item{
-        border-radius: 10px;
-        margin-right: 20px;
+        border-radius: $main-border-radius;
+        margin-right: $margin-xl;
     }
     &__img{
         width: 394px;
         height: 247px;
     }
     &__media{
-        margin-top: 20px;
+        margin-top: $margin-xl;
     }
     &__media-item{
     }
 }
 
 .clinic-doctors{
-    margin-top: 20px;
+    margin-top: $margin-xl;
     &__title{
-        padding: 20px;
+        padding: $padding-xl;
         background-color: #FFFFFF;
-        border-radius: 10px;
-        font-weight: 600;
-        font-size: 20px;
-        line-height: 28px;
+        border-radius: $main-border-radius;
+        font-weight: $font-weigth-lg-1;
+        font-size: $font-size-lg;
+        line-height: $line-height-6;
         letter-spacing: 0.8px;
         text-transform: uppercase;
-        color: #121127;
+        color: $main-text-color;
     }
     &__select{
-        margin-top: 20px;
-        padding: 20px;
-        background: #FFFFFF;
+        margin-top: $margin-xl;
+        padding: $padding-xl;
+        background: $main-bg-color;
         border: 1px solid rgba(18, 17, 39, 0.2);
-        border-radius: 10px;
+        border-radius: $main-border-radius;
     }
     &__show-more{
-        margin-top: 20px;
+        margin-top: $margin-xl;
     }
 }
 .white{
