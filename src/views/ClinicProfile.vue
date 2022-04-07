@@ -16,9 +16,9 @@
                         ПРОФИЛЬ КЛИНИКИ
                     </div>
                     <div class="clinic-spec__list">
-                        <a href="">
-                            <div class="clinic-spec__item ">
-                                Лечение аллергии
+                        <a href="" v-for="(item, index) in section" :key="index">
+                            <div class="clinic-spec__item" >
+                                {{item.title}}
                             </div>
                         </a>
                     </div>
@@ -62,10 +62,10 @@
             </div>
             <div class="clinic-gallery__media">
                 <div class="row">
-                    <div class="col-12 col-lg-6">
+                    <div class="col-12 col-md-6">
                         <div class="clinic-gallery__media-item">
                             <iframe
-                                class="media border-ctn" 
+                                class="media-frame border-ctn" 
                                 width="560" 
                                 height="408" 
                                 src="https://www.youtube.com/embed/tev0BTf0XW4"
@@ -76,10 +76,10 @@
                             </iframe>
                         </div>
                     </div>
-                    <div class="col-12 col-lg-6">
+                    <div class="col-12 col-md-6">
                         <div class="clinic-gallery__media-item">
                             <iframe
-                                class="media border-ctn" 
+                                class="media-frame border-ctn" 
                                 width="560" 
                                 height="408" 
                                 src="https://www.youtube.com/embed/tev0BTf0XW4"
@@ -102,7 +102,7 @@
     <section>
         <div class="clinic-doctors">
             <div class="row">
-                <div class="col-12 col-lg-8">
+                <div class="col-12 col-md-8">
                     <div class="row">
                         <div class="col-12">
                             <div class="clinic-doctors__title">
@@ -110,8 +110,27 @@
                             </div>
                         </div>
                         <div class="col-12">
-                            <div class="clinic-doctors__select">
-                                Аллергологи
+                            <div class="clinic-doctors__select-wrapper">
+                                <div class="clinic-doctors__select-wrap">
+                                    <div class="clinic-doctors__select-body ">
+                                        <select id="selector" class="clinic-doctors__select" name="select"> 
+                                            <option value="value1">Терапевт</option>
+                                            <option value="value2" selected>Аллерголог</option>
+                                            <option value="value3">Травмотолог</option>
+                                            <option value="value1">Терапевт</option>
+                                            <option value="value2" selected>Аллерголог</option>
+                                            <option value="value3">Травмотолог</option>
+                                            <option value="value1">Терапевт</option>
+                                            <option value="value2" selected>Аллерголог</option>
+                                            <option value="value3">Травмотолог</option>
+                                            <option value="value1">Терапевт</option>
+                                            <option value="value2" selected>Аллерголог</option>
+                                            <option value="value3">Травмотолог</option>     
+                                        </select>
+                                        <div class="clinic-doctors__select-font">
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <Doctor-card></Doctor-card>
@@ -125,6 +144,9 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-md-4 tablet-hide">
+                    <div class="add-clinic-doctors"></div>
+                </div>
             </div>
         </div>
     </section>
@@ -133,6 +155,7 @@
     </section>
 </template>
 <script>
+import $ from 'jquery'
 import Filter from '@/components/Filter.vue'
 import DoctorCard from '@/components/DoctorCard.vue'
 import ClinicCard from '@/components/ClinicCard.vue'
@@ -146,6 +169,76 @@ export default {
         SeoText,
         DoctorCard,
         Accordion
+    },
+    data() {
+        return {
+            section: [
+                {title: "Лечение аллергии"},
+                {title: "Лечение аллергии"},
+                {title: "Лечение аллергии"},
+                {title: "Лечение аллергии"},
+                {title: "Лечение аллергии"},
+                {title: "Лечение аллергии"},
+                {title: "Лечение аллергии"},
+                {title: "Лечение аллергии"},
+            ]
+        }
+    },
+    mounted() {
+        const left_btn = document.querySelector("#left");
+        left_btn.addEventListener("mousedown", event=> {
+            const scroll = document.querySelector(".clinic-gallery__scroll");
+            const media_item= document.querySelector(".clinic-gallery__item");
+            const item_minus = media_item.offsetWidth;
+            scroll.scrollLeft -= item_minus;
+        });
+        const right_btn = document.querySelector("#right");
+        right_btn.addEventListener("mousedown", event=> {
+        const scroll = document.querySelector(".clinic-gallery__scroll");
+        const media_item= document.querySelector(".clinic-gallery__item");
+        const item_plus = media_item.offsetWidth;
+        scroll.scrollLeft += item_plus;
+        });
+        let movement = false;
+        let mousedown = false;
+        function onMouseMove(e){
+            e.preventDefault();
+            e.stopPropagation();
+            if(mousedown) {
+                movement = true;
+                this.scrollLeft -= event.movementX;
+                this.scrollTop -= event.movementY;
+            }
+        }
+
+        function onMouseDown(){
+        mousedown = true;
+        movement = false;
+        }
+
+        function onMouseUp(e){
+        mousedown = false;
+        setTimeout(()=>movement = false, 10);
+        }
+
+        function onMouseClick(e){
+        if(movement){
+            e.preventDefault();
+            e.stopPropagation();
+        }
+        }
+        function onDragStart(e){
+            e.preventDefault();
+            e.stopPropagation();
+        }
+
+        let scr = $(".clinic-gallery__scroll");
+
+        scr.mousemove(onMouseMove);
+        scr.mousedown(onMouseDown);
+        $(window).mouseup(onMouseUp);
+        window.addEventListener('dragstart',onDragStart);
+        window.addEventListener('blur',onMouseUp);
     }
 }
 </script>
@@ -243,8 +336,8 @@ export default {
         margin-right: $margin-xl;
     }
     &__img{
-        width: 394px;
-        height: 247px;
+        width: 350px;
+        height: 250px;
     }
     &__media{
         margin-top: $margin-xl;
@@ -254,7 +347,7 @@ export default {
 }
 
 .clinic-doctors{
-    margin-top: $margin-xl;
+    margin: $margin-xl 0;
     &__title{
         padding: $padding-xl;
         background-color: #FFFFFF;
@@ -266,7 +359,7 @@ export default {
         text-transform: uppercase;
         color: $main-text-color;
     }
-    &__select{
+    &__select-wrapper{
         margin-top: $margin-xl;
         padding: $padding-xl;
         background: $main-bg-color;
@@ -276,17 +369,93 @@ export default {
     &__show-more{
         margin-top: $margin-xl;
     }
+     &__select-wrap{
+        padding: $padding-sm $padding-md;
+        background: $main-bg-color;
+        border: 1px solid rgba(18, 17, 39, 0.2);
+        box-sizing: border-box;
+        border-radius: $sub-border-radius;
+        display: flex;
+    }
+    &__select-body{
+        flex: 0 0 100%;
+        display: flex;
+        position: relative;
+    }
+    &__select{
+        width: 100%;
+        border: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        font-size: $font-size-md_3;
+        color: rgba(18, 17, 39, 0.6);
+    }
+    &__select-font{
+        background-image: url(/img/arrow.314ffd53.svg);
+        background-repeat: no-repeat;
+        transition: transform 0.2s ease-in-out;
+        width: 1.35rem;
+        height: 1.35rem;
+        background-size: 1rem;
+        background-position: center;
+        transform: rotate(-180deg);
+        position: absolute;
+        cursor: default;
+	    pointer-events: none;
+        right: 0;
+        top: 3%;
+    }
+    &__select:focus-visible{
+        outline:none;
+    }
+    &__select::after{
+        color: #e02b2b!important;
+    }
 }
+.add-clinic-doctors{
+    background: #C1C1C1;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+}
+
 .white{
     background-color: #FFFFFF;
 }
 .mazarine{
     background-color: #444BD3;
 }
-.media{
+.media-frame{
     width: 100%;
-    max-width: 100%;
-    min-height: 300px;
-    height: auto;
+    height: 400px;
+}
+
+@media screen and (max-width: 992px){
+    .media-frame {
+        height: 350px;
+    }
+}
+@media screen and (max-width: 576px){
+    .media-frame {
+        height: 250px;
+    }
+    .clinic-spec{
+        margin-top: 10px;
+        &__list{
+            margin-top: 10px;
+        }
+        &__item{
+            padding: 5px 10px;
+            margin: 5px 5px 0 0;
+            font-size: 14px;
+        }
+    }
+    .clinic-gallery{
+        &__title{
+            padding: 10px;
+            font-size: 18px;
+        }
+    }
 }
 </style>

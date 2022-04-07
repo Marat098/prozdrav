@@ -15,7 +15,7 @@
             <div class="col-12 col-md-6">
                 <div class="doc__media-item" >
                     <iframe
-                        class="doc__media border-ctn" 
+                        class="media-frame border-ctn" 
                         width="560" 
                         height="408" 
                         src="https://www.youtube.com/embed/tev0BTf0XW4"
@@ -29,7 +29,7 @@
             <div class="col-12 col-md-6">
                 <div class="doc__media-item" >
                     <iframe
-                        class="doc__media border-ctn" 
+                        class="media-frame border-ctn" 
                         width="560" 
                         height="408" 
                         src="https://www.youtube.com/embed/tev0BTf0XW4"
@@ -70,7 +70,15 @@
                     </h2>
                     <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
                     <div class="accordion-body">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Iaculis sit enim nullamius pellentesque eleifend. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Iaculius varius pellentesque eleifend. Lorem ipsum dolor sit amet, consectetur adipiscing elIaculis sit enim nullam pretium ridiculus aenean sed. Sed morbi elit massa ut metus varius pellentesque eleifend. 
+                        <div class="price">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                            Iaculis sit enim nullamius pellentesque eleifend. Lorem 
+                            ipsum dolor sit amet, consectetur adipiscing elit. Iaculius 
+                            varius pellentesque eleifend. Lorem ipsum dolor sit amet, 
+                            consectetur adipiscing elIaculis sit enim nullam pretium 
+                            ridiculus aenean sed. Sed morbi elit massa ut metus varius 
+                            pellentesque eleifend. 
+                        </div>
                     </div>
                     </div>
                 </div>
@@ -83,8 +91,13 @@
                     <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
                     <div class="accordion-body">
                         <div class="about-doctor">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Iaculi nim nullamius pellentesque eleifend. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Iaculius varius pellentesque eleifend. Lorem ipsum dolor sit amet, consectetur adipiscing elIaculis sit enim nullam pretium ridiculus aenean sed. Sed morbi elit massa ut metus varius pellentesque
-
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                                Iaculi nim nullamius pellentesque eleifend. Lorem ipsum 
+                                dolor sit amet, consectetur adipiscing elit. Iaculius 
+                                varius pellentesque eleifend. Lorem ipsum dolor sit amet, 
+                                consectetur adipiscing elIaculis sit enim nullam pretium 
+                                ridiculus aenean sed. Sed morbi elit massa ut metus varius 
+                                pellentesque
                         </div>
                     </div>
                     </div> 
@@ -130,7 +143,7 @@ export default {
 }
 #doc-show-more{
     width: 100%;
-    background-color: $bg-color-1;
+    background-color: $doc-clinic-color;
 }
 .doc{
     margin-top: $margin-xl;
@@ -189,9 +202,40 @@ export default {
 }
 .reviews-title{
     background-color: $main-bg-color;
-    padding: $padding-xl;
+    padding: $padding-md $padding-lg-1;
     font-weight: $font-weigth-md;
     border-radius: $main-border-radius;
 }
+.media-frame{
+    width: 100%;
+    height: 400px;
+}
 
+@media screen and (max-width: 992px){
+    .media-frame {
+        height: 350px;
+    }
+}
+@media screen and (max-width: 576px){
+    .media-frame {
+        height: 250px;
+    }
+    .accordion-body{
+        padding: 10px;
+    }
+    .services-item{
+        width: 90%;
+        padding: 5px 10px;
+        margin-top: 5px;
+    }
+    .price{
+        width: 85%;
+    }
+    .about-doctor{
+        width: 85%;
+    }
+    .accordion-button{
+        padding: 0.5rem 0.9rem;
+    }
+}
 </style>

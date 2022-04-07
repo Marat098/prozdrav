@@ -2,7 +2,7 @@
   <div class="col-12 doc">
     <div class="doc-item border-ctn">
       <div class="doc-item__img-wrap">
-          <a href="">
+          <a href="/doc-profile">
             <img
             src="img\Rectangle 210.png"
             alt=""
@@ -18,7 +18,7 @@
       </div>
       <div class="doc-item__description">
         <div class="doc-item__title">
-            <a href="">
+            <a href="/doc-profile">
                 <span>Рязанцева Алена Андреевна</span>
             </a>
         </div>
@@ -193,6 +193,59 @@ export default {
         border-radius: $sub-border-radius;
         color: $color-text-light!important;
         font-size: $font-size-md_3;
+    }
+}
+@media screen and(max-width: 576px){
+    .doc-item{
+        padding: $padding-xl $padding-md;
+        &__img-wrap{
+            margin-right: $margin-md_1;
+        }
+        &__img{
+            width: 100px;
+            height: 110px;
+        }
+        &__rating{
+            font-size: $font-size-md_3;
+        }
+        &__reviews-count{
+            font-size: $font-size-sm;
+        }
+        &__title{
+            font-size: $font-size-md_1;
+            margin-bottom: 0;
+        }
+        &__exp-itm{
+            font-size: $font-size-md_3;
+        }
+        &__spec{
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: $margin-md_1;
+
+        }
+        &__spec-item{
+            margin-right: $margin-sm;
+            margin-bottom: $margin-sm;
+        }
+        &__price{
+            font-size: $font-size-sm;
+            padding: $padding-sm $padding-md;
+            width: 100%;
+        }
+        &__contacts{
+
+        }
+        &__contacts-item{
+            padding: $padding-sm $padding-md;
+            width: 100%;
+            font-size: $font-size-sm;
+        }
+        &__contacts-phone{
+            font-size: $font-size-sm;
+            padding: $padding-sm $padding-md;
+            margin-bottom: $margin-sm;
+        }
     }
 }
 </style>

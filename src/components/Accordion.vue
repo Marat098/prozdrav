@@ -80,4 +80,10 @@ export default {
 .accordion-button:not(.collapsed)::after{
     background-image: url("~@/assets/fonts/arrow.svg")
 }
+@media screen and(max-width: 576px){
+    .seo-text{
+        margin-top:$margin-md_1;
+    }
+}
+
 </style>

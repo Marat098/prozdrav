@@ -1,39 +1,26 @@
 <template>
     <div class="seo-text">
-        <div class="accordion" id="accordionPanelsStayOpenExample">
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-                    SEO ТЕКСТ
+        <div class="accordion" id="seo-text-acc">
+            <div class="accordion-item" v-for="(item, index) in items" :key = index>
+                <h2 class="accordion-header" :id="item.idTag">
+                <button 
+                    class="accordion-button " 
+                    type="button" 
+                    data-bs-toggle="collapse"
+                    :data-bs-target = "'#accordion-wrap_'+ index"
+                    :aria-expanded='item.collapse'
+                    :aria-controls = "'#accordion-wrap_'+ index"
+                    :class='{"collapsed": !item.collapse}' >
+                    {{item.title}}
                 </button>
                 </h2>
-                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+                <div :id = "'accordion-wrap_'+ index"   
+                    class="accordion-collapse collapse" 
+                    :aria-labelledby="item.idTag"
+                    :class='{"show": item.collapse == true}'
+                    >
                 <div class="accordion-body">
-                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Iaculis sit enim nullamius pellentesque eleifend. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Iaculius varius pellentesque eleifend. Lorem ipsum dolor sit amet, consectetur adipiscing elIaculis sit enim nullam pretium ridiculus aenean sed. Sed morbi elit massa ut metus varius pellentesque eleifend. 
-                </div>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
-                    SEO ТЕКСТ
-                </button>
-                </h2>
-                <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
-                <div class="accordion-body">
-                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Iaculis sit enim nullamius pellentesque eleifend. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Iaculius varius pellentesque eleifend. Lorem ipsum dolor sit amet, consectetur adipiscing elIaculis sit enim nullam pretium ridiculus aenean sed. Sed morbi elit massa ut metus varius pellentesque eleifend. 
-                </div>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="panelsStayOpen-headingThree">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
-                    SEO ТЕКСТ
-                </button>
-                </h2>
-                <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
-                <div class="accordion-body">
-                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Iaculis sit enim nullamius pellentesque eleifend. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Iaculius varius pellentesque eleifend. Lorem ipsum dolor sit amet, consectetur adipiscing elIaculis sit enim nullam pretium ridiculus aenean sed. Sed morbi elit massa ut metus varius pellentesque eleifend. 
+                   {{item.description}}
                 </div>
                 </div>
             </div>
@@ -42,6 +29,55 @@
 </template>
 <script>
 export default {
+    // props: {
+    //     items: Array
+    // },
+    data () {
+        return {
+            items: [
+                {
+                    idTag: `accordion_item_${Math.floor(Math.random() * (100000 - 10000 + 1) + 10000)}`,
+                    title: "SEO ТЕКСТ", 
+                    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                                  Iaculis sit enim nullamius pellentesque eleifend. Lorem 
+                                  ipsum dolor sit amet, consectetur adipiscing elit. Iaculius 
+                                  varius pellentesque eleifend. Lorem ipsum dolor sit amet, 
+                                  consectetur adipiscing elIaculis sit enim nullam pretium 
+                                  ridiculus aenean sed. Sed morbi elit massa ut metus varius 
+                                  pellentesque eleifend.`,
+                    collapse: true
+                },
+                {
+                    idTag: `accordion_item_${Math.floor(Math.random() * (100000 - 10000 + 1) + 10000)}`,
+                    title: "SEO ТЕКСТ", 
+                    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                                  Iaculis sit enim nullamius pellentesque eleifend. Lorem 
+                                  ipsum dolor sit amet, consectetur adipiscing elit. Iaculius 
+                                  varius pellentesque eleifend. Lorem ipsum dolor sit amet, 
+                                  consectetur adipiscing elIaculis sit enim nullam pretium 
+                                  ridiculus aenean sed. Sed morbi elit massa ut metus varius 
+                                  pellentesque eleifend.`,
+                    collapsed: false
+                },
+                {
+                    idTag: `accordion_item_${Math.floor(Math.random() * (100000 - 10000 + 1) + 10000)}`,
+                    title: "SEO ТЕКСТ", 
+                    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                                  Iaculis sit enim nullamius pellentesque eleifend. Lorem 
+                                  ipsum dolor sit amet, consectetur adipiscing elit. Iaculius 
+                                  varius pellentesque eleifend. Lorem ipsum dolor sit amet, 
+                                  consectetur adipiscing elIaculis sit enim nullam pretium 
+                                  ridiculus aenean sed. Sed morbi elit massa ut metus varius 
+                                  pellentesque eleifend.`,
+                    collapsed: false
+                },
+            ]
+        }
+    },
+    mounted () {
+        console.log(this.items)
+    }
+    
     
 }
 </script>
@@ -75,5 +111,10 @@ export default {
 
 .accordion-button:not(.collapsed)::after{
     background-image: url("~@/assets/fonts/arrow.svg")
+}
+@media screen and(max-width: 576px){
+    .seo-text{
+        margin-top:$margin-md_1;
+    }
 }
 </style>

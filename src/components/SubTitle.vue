@@ -5,8 +5,6 @@
 </template>
 <script>
 export default {
-    data() {
-    },
     props: {
         title: String,
         textColor: {
@@ -15,7 +13,6 @@ export default {
         } ,
     },
     mounted (){
-        console.log(this)
     }
 }
 </script>

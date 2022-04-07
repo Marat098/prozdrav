@@ -84,4 +84,38 @@ export default {
         color: rgba(18, 17, 39, 0.7)
     }
 }
+@media screen and(max-width: 576px){
+    .review-item{
+        padding: 10px;
+        &__body{
+            order: 2;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 160%;
+        }
+        &__head{
+            width: 100%;
+            order: 3;
+        }
+        &__photo-wrap{
+            width: auto;
+            height: auto;
+        }
+        &__photo{
+            height: 48px;
+            width: 48px;
+        }
+        &__rating-wrap{
+            margin-bottom: 10px;
+            width: 100%;
+            justify-content: start;
+        }
+        &__rating{
+            font-size: 14px;
+            padding: 5px 10px;
+
+        }
+    }
+
+}
 </style>

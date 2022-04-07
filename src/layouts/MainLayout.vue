@@ -13,7 +13,7 @@
                       <button
                         id = "current-city" 
                         type="button" 
-                        class="btn btn-primary" 
+                        class="btn btn-primary mobile-hide" 
                         data-bs-toggle="dropdown" 
                         aria-expanded="false">
                         <img src="fonts/Pin.svg" alt="">

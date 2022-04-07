@@ -2,7 +2,7 @@
   <div class="col-12 clinic">
     <div class="clinic-item border-ctn">
       <div class="clinic-item__img-wrap">
-          <a href="">
+          <a href="/clinic-profile">
             <img
             src="img\unsplash_IV6Ge9vzmHE.png"
             alt=""
@@ -18,7 +18,7 @@
       </div>
       <div class="clinic-item__description">
         <div class="clinic-item__title">
-            <a href="">
+            <a href="/clinic-profile">
                 <span>Медицинский центр “JC Clinic” </span>
             </a>
         </div>
@@ -33,7 +33,7 @@
         <div class="clinic-item__contacts">
             <div class="clinic-item__contacts-item">
                 <div class="clinic-item__contacts-address">
-                    <span>Медицинский центр “JC Clinic” </span>
+                    <span>Медицинский центр “JC Clinic”, ул. Барсаитова 17а </span>
                 </div>
                 <a class="clinic-item__contacts-phone" href="tel:+7 707 637 7050">+7 707 637 7050</a>
             </div>
@@ -115,6 +115,7 @@ export default {
         line-height: 115%;
         color: $main-text-color;
         font-weight: $font-weigth-sm;
+        color: rgba(18, 17, 39, 0.8);
     }
     &__description-body{
         font-weight: $font-weigth-sm;
@@ -155,6 +156,7 @@ export default {
   }
     &__contacts-address{
         margin-bottom: $margin-md_1;
+        color: rgba(18, 17, 39, 0.7);
     }
     &__contacts-phone{
         padding: $padding-md-1 $padding-lg;
@@ -162,6 +164,44 @@ export default {
         border-radius: $sub-border-radius;
         color: $color-text-light!important;
         font-size: $font-size-md_3;
+    }
+}
+@media screen and(max-width: 576px){
+    .clinic-item{
+        padding: 20px 10px;
+        &__img-wrap{
+            margin-right: 10px;
+        }
+        &__img{
+            width: 90px;
+            height: 100px;
+        }
+        &__rating{
+            font-size: 12px;
+            padding: 3px;
+        }
+        &__reviews-count{
+            font-size: 12px;
+        }
+        &__title{
+            font-size: 16px;
+        }
+        &__spec{
+            font-size: 14px;
+        }
+        &__description-body{
+            font-size: 14px;
+        }
+        &__contacts-item{
+            width: 100%;
+        }
+        &__contacts-address{
+            font-size: 14px;
+        }
+        &__contacts-phone{
+            font-size: 14px;
+            padding: 5px 10px
+        }
     }
 }
 </style>

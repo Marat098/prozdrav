@@ -235,6 +235,21 @@ export default {
 }
 
 @media screen and(max-width: 576px){
+    .banner{
+        height: 350px;
+        
+        &__title-wrap{
+            padding: $padding-md $padding-xl;
+            width: 95%;
+            
+        }
+        &__title{
+            font-size: $font-size-xl;
+        }
+        &__sub-title{
+            font-size: $font-size-md_3;
+        }
+    }
     .selector{
         &__item{
             flex-direction: column-reverse;
@@ -251,7 +266,9 @@ export default {
         }
     }
     .catalog{
-        column-count: 1;
+        column-count: 2;
+        padding: $padding-xl $padding-md;
     }
+
 }
 </style>

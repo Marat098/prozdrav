@@ -10,6 +10,10 @@
                 <div class="col-12 col-lg-8">
                     <div class="row">
                         <Doctor-card></Doctor-card>
+                        <Doctor-card></Doctor-card>
+                        <Doctor-card></Doctor-card>
+                        <Doctor-card></Doctor-card>
+                        <Doctor-card></Doctor-card>
                     </div>
                 </div>
                 <div class="col-lg-4 mobile-hide">
@@ -18,27 +22,37 @@
             </div>
         </div>
     </section>
-    
+    <section>
+        <SeoText></SeoText>
+    </section>
 </template>
 <script>
 import DoctorCard from '@/components/DoctorCard.vue'
 import Filter from '@/components/Filter.vue'
 import SubTitle from '@/components/SubTitle.vue'
 import Description from '@/components/Description.vue'
+import SeoText from '@/components/SeoText.vue'
 export default {
     name: 'Doctors',
     components: {
         DoctorCard,
         Filter,
         SubTitle,
-        Description
+        Description,
+        SeoText
     }
 }
 </script>
 <style lang="scss">
 
 .doc-list{
-     
+    &__ad{
+        margin-top: 20px;
+        width: 100%;
+        height: 330px;
+        background: #C1C1C1;
+        border-radius: 10px;
+    }
 }
 
 

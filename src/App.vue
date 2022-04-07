@@ -52,9 +52,17 @@ a{
 .mobile-hide{
   display: block;
 }
+.tablet-hide{
+  display: block;
+}
 @media screen and(max-width: 576px){
   .mobile-hide{
     display: none !important;
+  }
+}
+@media screen and(max-width: 768px) {
+  .tablet-hide{
+    display: none!important;
   }
 }
 

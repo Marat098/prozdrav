@@ -127,6 +127,7 @@ export default {
     background-color: $doc-clinic-color;
     border-color: $doc-clinic-color;
     border-radius: $main-border-radius;
+    white-space: no;
 }
 .dropdown-menu{
     width: 100%;
