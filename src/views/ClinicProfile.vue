@@ -456,6 +456,17 @@ export default {
             padding: 10px;
             font-size: 18px;
         }
+        &__scroll{
+            padding: 10px;
+        }
+        &__item{
+            margin-right: 10px;
+        }
+        &__img{
+            width: 180px;
+            height: 130px;
+        }
     }
+
 }
 </style>

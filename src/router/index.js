@@ -80,6 +80,12 @@ const routes = [
     meta: {layout: 'main'},
     component: () => import('../views/PromotionProfile.vue')
   },
+  {
+    path: '/all-news',
+    name: 'AllNews',
+    meta: {layout: 'main'},
+    component: () => import('../views/AllNews.vue')
+  },
 
 ]
 

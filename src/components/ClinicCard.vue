@@ -191,6 +191,7 @@ export default {
         }
         &__description-body{
             font-size: 14px;
+            line-height: 120%;
         }
         &__contacts-item{
             width: 100%;
