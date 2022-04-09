@@ -16,7 +16,7 @@
           <main-news-item imgPath = "img\unsplash_iqGtaQnk3VM.png"></main-news-item>
         </div>
         <div class="col-sm-6 col-lg-6">
-          <div class="main-news__column border-ctn">
+          <div id="left-main" class="main-news__column border-ctn">
             <news-item></news-item>
             <news-item></news-item>
             <news-item></news-item>
@@ -25,12 +25,12 @@
           </div>
         </div>
         <div class="col-sm-6 col-lg-6">
-          <div class="main-news__column border-ctn">
+          <div id="rigth-main" class="main-news__column border-ctn">
             <news-item></news-item>
             <news-item></news-item>
           </div>
           <div class="main-news__all-news-link border-ctn">
-            <a href="">
+            <a href="/all-news">
               <span>Смотреть все</span>
             </a>
           </div>
@@ -209,6 +209,21 @@ export default {
     $(window).mouseup(onMouseUp);
     window.addEventListener('dragstart',onDragStart);
     window.addEventListener('blur',onMouseUp);
+
+
+    const left_main_news = document.querySelector('#left-main');
+    const rigth_main_news = document.querySelector('#rigth-main');
+    const all_news_btn = document.querySelector('.main-news__all-news-link');
+    const ad = document.querySelector('.main-news__add-1');
+    const all_news_btn_margin = parseInt(window.getComputedStyle(all_news_btn, null).getPropertyValue("margin-top"));
+    ad.style.height = left_main_news.offsetHeight - (rigth_main_news.offsetHeight + all_news_btn.offsetHeight + 2*all_news_btn_margin) +'px';
+
+
+    window.addEventListener('resize', event=>{
+      const all_news_btn_margin = parseInt(window.getComputedStyle(all_news_btn, null).getPropertyValue("margin-top"));
+      ad.style.height = left_main_news.offsetHeight - (rigth_main_news.offsetHeight + all_news_btn.offsetHeight + 2*all_news_btn_margin) +'px';
+    })
+    
   }
 }
 </script>

@@ -338,6 +338,7 @@ export default {
     &__img{
         width: 350px;
         height: 250px;
+        object-fit: fill;
     }
     &__media{
         margin-top: $margin-xl;

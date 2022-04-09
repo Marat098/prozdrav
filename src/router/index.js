@@ -86,6 +86,12 @@ const routes = [
     meta: {layout: 'main'},
     component: () => import('../views/AllNews.vue')
   },
+  {
+    path: '/all-media',
+    name: 'AllMedia',
+    meta: {layout: 'main'},
+    component: () => import('../views/AllMedia.vue')
+  },
 
 ]
 

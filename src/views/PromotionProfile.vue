@@ -58,108 +58,37 @@
                 <div class="additional-promo__title">
                     Дополнительно
                 </div>
-                <button type="button" class="btn btn-primary">Показать еще</button>
+                <button type="button" class="btn btn-primary mobile-hide">Показать еще</button>
             </div>
             <div class="additional-promo__body">
-                <div class="promo-list">
-                    <div class="promo-item">
-                        <div class="promo-item__img-wrap">
-                            <img class="img-fluid" src="img\unsplash_GodLOdCpLi4.png" alt="">
-                        </div>
-                        <div class="promo-item__body">
-                            <div class="promo-item__percent">
-                                скидка 50%
-                            </div>
-                            <div class="promo-item__title">
-                                Guide for designing better
-                                mobile apps typography
-                            </div>
-                            <div class="promo-item__description">
-                                <p>In this article, I won’t talk about the general concepts of typography, which can be used both in print...</p> 
-                            </div>
-                            <div class="promo-item__category">
-                                <span> Аллергология</span>
-                            
-                            </div>
-                        </div>
-                    </div>
-                    <div class="promo-item">
-                        <div class="promo-item__img-wrap">
-                            <img class="img-fluid" src="img\unsplash_GodLOdCpLi4.png" alt="">
-                        </div>
-                        <div class="promo-item__body">
-                            <div class="promo-item__percent">
-                                скидка 50%
-                            </div>
-                            <div class="promo-item__title">
-                                Guide for designing better
-                                mobile apps typography
-                            </div>
-                            <div class="promo-item__description">
-                                <p>In this article, I won’t talk about the general concepts of typography, which can be used both in print...</p> 
-                            </div>
-                            <div class="promo-item__category">
-                                <span> Аллергология</span>
-                            
-                            </div>
-                        </div>
-                    </div>
-                    <div class="promo-item">
-                        <div class="promo-item__img-wrap">
-                            <img class="img-fluid" src="img\unsplash_GodLOdCpLi4.png" alt="">
-                        </div>
-                        <div class="promo-item__body">
-                            <div class="promo-item__percent">
-                                скидка 50%
-                            </div>
-                            <div class="promo-item__title">
-                                Guide for designing better
-                                mobile apps typography
-                            </div>
-                            <div class="promo-item__description">
-                                <p>In this article, I won’t talk about the general concepts of typography, which can be used both in print...</p> 
-                            </div>
-                            <div class="promo-item__category">
-                                <span> Аллергология</span>
-                            
-                            </div>
-                        </div>
-                    </div>
-                    <div class="promo-item">
-                        <div class="promo-item__img-wrap">
-                            <img class="img-fluid" src="img\unsplash_GodLOdCpLi4.png" alt="">
-                        </div>
-                        <div class="promo-item__body">
-                            <div class="promo-item__percent">
-                                скидка 50%
-                            </div>
-                            <div class="promo-item__title">
-                                Guide for designing better
-                                mobile apps typography
-                            </div>
-                            <div class="promo-item__description">
-                                <p>In this article, I won’t talk about the general concepts of typography, which can be used both in print...</p> 
-                            </div>
-                            <div class="promo-item__category">
-                                <span> Аллергология</span>
-                            
-                            </div>
-                        </div>
-                    </div>
+                <PromoList>
+                    <promo-card></promo-card>
+                    <promo-card></promo-card>
+                    <promo-card></promo-card>
+                    <promo-card></promo-card>
+                </PromoList>
+                <div class="promo-button desktop-hide" >
+                    <button type="button" class="btn btn-primary mobile-button">Показать еще</button>
                 </div>
             </div>
         </div>
     </section>
     <section>
-        <accordion></accordion>
+        <seo-text></seo-text>
     </section>
     
 </template>
 <script>
+import SeoText from '@/components/SeoText.vue'
 import Accordion from '@/components/Accordion.vue'
+import PromoList from '@/components/PromoList.vue'
+import PromoCard from '@/components/PromoCard.vue'
 export default {
     components: {
-        Accordion
+        SeoText,
+        Accordion,
+        PromoList,
+        PromoCard
     },
     data() {
         return {
@@ -173,6 +102,13 @@ export default {
 .btn-primary{
     background: $promo-main-color;
     border-radius: $md-border-radius;
+    border-color: unset;
+}
+.promo-button{
+    margin-top: $margin-md_1;
+}
+.mobile-button{
+    width: 100%!important;
 }
 
 .promotion{
@@ -184,6 +120,7 @@ export default {
         position: relative;
         width: 100%;
         height: auto;
+        min-height:200px;
         max-height: 70vh;
         max-width: 100%;
         object-fit: fill;
@@ -234,7 +171,7 @@ export default {
         font-size: $font-size-xl;
         line-height: $description-line-height;
         color: rgba(18, 17, 39, 0.8);
-        margin-bottom: 5px;
+        margin-bottom: $margin-sm;
     }
     &__clinic-spec{
         font-weight: $font-weigth-sm;
@@ -303,56 +240,62 @@ export default {
     }
 }
 
-.promo-list{
-    display: flex;
-    gap: $gap-xl;
-    margin-top: $margin-xl;
-}
-
-.promo-item{
-    width: 25%;
-    background-color: $main-bg-color;
-    border-radius: $main-border-radius;
-    &__body{
-
-        padding: $padding-xl;
+@media screen and(max-width: 768px){
+    .promotion{
+        &__head{
+            margin: $margin-md_1 0;
+            padding: $padding-xl $padding-md;
+        }
+        &__title{
+            line-height: 120%;
+            font-size: $font-size-xl;
+            p{
+                margin-bottom: $margin-md_1;
+            }
+        }
+        &__description{
+            width: 100%;
+            font-size: $font-size-md_3;
+            line-height: 140%;
+        }
+        &__body{
+            flex-direction: column;
+        }
+        &__detail{
+            flex: 0 0 100%;
+            margin-right: 0;
+        }
+        &__clinic{
+            padding: $padding-md;
+        }
+        &__clinic-title{
+            font-size: $font-size-md_1;
+        }
+        &__clinic-spec{
+            font-size: $font-size-md_2;
+        }
+        &__clinic-phone{
+            a{
+                padding: $padding-sm $padding-md;
+                font-size: $font-size-md_3;
+            }
+        }
+        &__price{
+            margin-bottom: $margin-md_1;
+            padding: $padding-lg-1 $padding-md;
+        }
+        &__price-title{
+            margin-bottom: $margin-md_1;
+        }
+        &__price-item{
+            padding: $padding-md;
+            margin-bottom: $margin-sm;
+            font-size: $font-size-md_3;
+        }
     }
-    &__percent{
-        font-weight: $font-weigth-lg-1;
-        font-size: $font-size-md_3;
-        line-height: 170%;
-        letter-spacing: 0.8px;
-        text-transform: uppercase;
-        color: $promo-main-color;
-        margin-bottom: $margin-md_1;
-    }
-    &__title{
-        font-weight: $font-weigth-lg;
-        font-size: $font-size-lg;
-        line-height: $line-height-1;
-        color: $main-text-color;
-        margin-bottom: $margin-md_1;
-        height: 56px;
-        overflow: hidden;
-    }
-    &__description{
-        font-weight: $font-weigth-sm;
-        font-size: $font-size-md_2;
-        line-height: $line-height-4;
-        color: $description-font-color;
-        height: 110px;
-        overflow: hidden;
-        margin-bottom: $margin-xl;
-    }
-    &__category{
-        font-weight: $font-weigth-sm;
-        font-size: $font-size-md_3;
-        line-height: $line-height-4;
-        color: $promo-main-color;
-        span{
-            padding: $padding-sm $padding-lg;
-            background: rgba(255, 140, 103, 0.2);
-            border-radius: $xxl-border-radius;
+    .additional-promo{
+        &__title{
+            font-size: $font-size-xl;
         }
     }
 }
