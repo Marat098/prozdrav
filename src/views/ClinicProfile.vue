@@ -418,7 +418,7 @@ export default {
     background: #C1C1C1;
     height: 100%;
     width: 100%;
-    border-radius: 10px;
+    border-radius: $main-border-radius;
 }
 
 .white{
@@ -442,26 +442,26 @@ export default {
         height: 250px;
     }
     .clinic-spec{
-        margin-top: 10px;
+        margin-top: $margin-md_1;
         &__list{
-            margin-top: 10px;
+            margin-top: $margin-md_1;
         }
         &__item{
-            padding: 5px 10px;
-            margin: 5px 5px 0 0;
-            font-size: 14px;
+            padding: $padding-sm $padding-md;
+            margin: $margin-sm $margin-sm 0 0;
+            font-size: $font-size-md_3;
         }
     }
     .clinic-gallery{
         &__title{
-            padding: 10px;
-            font-size: 18px;
+            padding: $padding-md;
+            font-size: $font-size-md_1;
         }
         &__scroll{
-            padding: 10px;
+            padding: $padding-md;
         }
         &__item{
-            margin-right: 10px;
+            margin-right: $margin-md_1;
         }
         &__img{
             width: 180px;

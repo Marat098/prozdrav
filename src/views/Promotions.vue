@@ -155,8 +155,6 @@ export default {
 .promo-button{
     margin-top: $margin-md_1;
 }
-
-
 .aquamarine{
     background: #D4FFF5;
 }

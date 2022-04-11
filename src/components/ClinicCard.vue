@@ -168,40 +168,40 @@ export default {
 }
 @media screen and(max-width: 576px){
     .clinic-item{
-        padding: 20px 10px;
+        padding: $padding-xl $padding-md;
         &__img-wrap{
-            margin-right: 10px;
+            margin-right: $margin-md_1;
         }
         &__img{
             width: 90px;
             height: 100px;
         }
         &__rating{
-            font-size: 12px;
-            padding: 3px;
+            font-size: $font-size-sm;
+            padding: $padding-sm-2;
         }
         &__reviews-count{
-            font-size: 12px;
+            font-size: $font-size-sm;
         }
         &__title{
-            font-size: 16px;
+            font-size: $font-size-md_2;
         }
         &__spec{
-            font-size: 14px;
+            font-size: $font-size-md_3;
         }
         &__description-body{
-            font-size: 14px;
+            font-size: $font-size-md_3;
             line-height: 120%;
         }
         &__contacts-item{
             width: 100%;
         }
         &__contacts-address{
-            font-size: 14px;
+            font-size: $font-size-md_3;
         }
         &__contacts-phone{
-            font-size: 14px;
-            padding: 5px 10px
+            font-size: $font-size-md_3;
+            padding: $padding-sm $padding-md
         }
     }
 }

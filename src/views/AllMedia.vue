@@ -45,9 +45,9 @@ export default {
 }
 .all-media{
     &__title{
-        padding: 20px;
-        font-weight: 700;
-        font-size: 36px;
+        padding: $padding-xl;
+        font-weight: $font-weigth-lg;
+        font-size: $font-size-xxl;
         line-height: 140%;
         color: #121127;
         background-color: $main-bg-color;

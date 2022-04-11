@@ -8,7 +8,11 @@
 import MainLayout from '@/layouts/MainLayout.vue'
 import AdminLayout from '@/layouts/AdminLayout.vue'
 
+
 export default {
+  head: {
+
+  },
   computed: {
     layout() {
       return (this.$route.meta.layout) + '-layout'

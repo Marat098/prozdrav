@@ -86,11 +86,11 @@ export default {
 }
 @media screen and(max-width: 576px){
     .review-item{
-        padding: 10px;
+        padding: $padding-md;
         &__body{
             order: 2;
-            font-weight: 400;
-            font-size: 14px;
+            font-weight: $font-weigth-sm;
+            font-size: $font-size-md_3;
             line-height: 160%;
         }
         &__head{
@@ -106,13 +106,13 @@ export default {
             width: 48px;
         }
         &__rating-wrap{
-            margin-bottom: 10px;
+            margin-bottom: $margin-md_1;
             width: 100%;
             justify-content: start;
         }
         &__rating{
-            font-size: 14px;
-            padding: 5px 10px;
+            font-size: $font-size-md_3;
+            padding: $padding-sm $padding-md;
 
         }
     }

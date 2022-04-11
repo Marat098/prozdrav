@@ -221,12 +221,12 @@ export default {
         height: 250px;
     }
     .accordion-body{
-        padding: 10px;
+        padding: $padding-md;
     }
     .services-item{
         width: 90%;
-        padding: 5px 10px;
-        margin-top: 5px;
+        padding: $padding-sm $padding-md;
+        margin-top: $margin-sm;
     }
     .price{
         width: 85%;
