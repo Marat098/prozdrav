@@ -27,7 +27,13 @@
                       </ul>
 
                   </div>
-
+                  <div class="burger" id="burger">
+                    <div class="menu-mobile-close">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div class="col-12">
@@ -60,6 +66,126 @@
         <main>
             <router-view/>
         </main>
+        <footer class="footer">
+          <div class="footer-body">
+            <div class="footer-row footer-line">
+              <div class="footer-column">
+                <ul class="footer-column__body">
+                  <li class="footer-column__body-item">
+                    <a class="footer-column__body-link" href="/">
+                      Новости
+                    </a>
+                  </li>
+                  <li class="footer-column__body-item">
+                    <a class="footer-column__body-link" href="/">
+                      Видео
+                    </a>
+                  </li>
+                  <li class="footer-column__body-item">
+                    <a class="footer-column__body-link" href="/">
+                      Пресс релизы 
+                    </a>
+                  </li>
+                  <li class="footer-column__body-item">
+                    <a class="footer-column__body-link" href="/">
+                      Справочник болезней
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="footer-column">
+                <ul class="footer-column__body">
+                  <li class="footer-column__body-item">
+                    <a class="footer-column__body-link" href="/">
+                      Врачи
+                    </a>
+                  </li>
+                  <li class="footer-column__body-item">
+                    <a class="footer-column__body-link" href="/">
+                      Клиники
+                    </a>
+                  </li>
+                  <li class="footer-column__body-item">
+                    <a class="footer-column__body-link" href="/">
+                      Процедуры
+                    </a>
+                  </li>
+                  <li class="footer-column__body-item">
+                    <a class="footer-column__body-link" href="/">
+                      Диагностика
+                    </a>
+                  </li>
+                  <li class="footer-column__body-item">
+                    <a class="footer-column__body-link" href="/">
+                      Акции
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="footer-column">
+                <ul class="footer-column__body">
+                  <li class="footer-column__body-item">
+                    <a class="footer-column__body-link" href="/">
+                      О проекте
+                    </a>
+                  </li>
+                  <li class="footer-column__body-item">
+                    <a class="footer-column__body-link" href="/">
+                      Реклама
+                    </a>
+                  </li>
+                  <li class="footer-column__body-item">
+                    <a class="footer-column__body-link" href="/">
+                      Пациентам
+                    </a>
+                  </li>
+                  <li class="footer-column__body-item">
+                    <a class="footer-column__body-link" href="/">
+                      Врачам
+                    </a>
+                  </li>
+                  <li class="footer-column__body-item">
+                    <a class="footer-column__body-link" href="/">
+                      Клиникам
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="footer-column footer-icons">
+                <div class="footer-column__icons-wrap"> 
+                  <div class="footer-column__main-icon-wrap">
+                    <img src= "fonts/main-icon.svg" width="350" height="80"  alt="" class="footer-column__main-icon" />
+                  </div>
+                  <div class="footer-column__secondary-icons">
+                    <a href="">
+                      <img src="fonts/youtube-icon.svg" alt="">
+                    </a>
+                    <a href="">
+                      <img src="fonts/vk-icon.svg" alt="">
+                    </a>
+                    <a href="">
+                      <img src="fonts/facebook-icon.svg" alt="">
+                    </a>
+                    <a href="">
+                      <img src="fonts/insta-icon.svg" alt="">
+                    </a>
+                    <a href="">
+                      <img src="fonts/itube-icon.svg" alt="">
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="footer-row footer-text-wrap">
+              <div class="footer-text">
+                Медицинское сетевое издание «Prozdrav» Свидетельство о постановке 
+                на учет периодического печатного издания и информационного агентства 
+                № KZ35VPY00047899 выдано 13.04.2022. выданного Комитетом информатизации 
+                Министерство информации и общественного развития Республики Казахстан.
+              </div>
+            </div>
+          </div>
+        </footer>
     </div>
   </div>
 </template>
@@ -84,7 +210,6 @@ export default {
   }
 
   .header {
-
     background-color: $main-bg-color;
     padding: $padding-xl $padding-xxl 0 $padding-xxl;
     margin: $margin-xl 0;
@@ -135,6 +260,64 @@ export default {
       width: 100%;
     }
   }
+  .footer-body{
+    margin-top: 10px;
+    padding: 20px;
+    background-color: #FFFFFF;
+    margin-bottom: 0 !important;
+    border-radius: 10px;
+  }
+  .footer-line{
+    border-bottom: 2px solid #12112726;
+    padding-bottom: 20px;
+  }
+  .footer-row{
+    display: flex;
+  }
+  .footer-column{
+    display: flex;
+    margin-right: auto;
+    &__body{
+
+    }
+    &__body-item{
+      margin-bottom: 10px;
+      color: #000000;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+    }
+    &__icons-wrap{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      align-self: center;
+    }
+    &__main-icon-wrap{
+      display: flex;
+      align-items: center;
+      margin-left: 20px;
+    }
+    &__main-icon{
+      position: relative;
+      width: 100%;
+      max-width: 350px;
+    }
+    &__secondary-icons{
+
+    }
+  }
+  .footer-text-wrap{
+    padding: 20px;
+  }
+  .footer-text{
+    text-align: center;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: #000000;
+  }
 
   .menu {
     display: flex;
@@ -160,12 +343,30 @@ export default {
       }
   }
 
+  .burger{
+    width: 100px;
+    display: none;
+    span{
+      border-bottom: 2px solid #001b36;
+      display: block;
+      margin-bottom: 5px;
+      width: 23px;
+    }
+  }
+  .menu-mobile-close{
+    margin-left:auto;
+  }
+
   @media screen and(max-width: 992px) {
     .header{
       border: 0;
       border-radius: 0;
+      padding: $padding-xl $padding-xl 0 $padding-xl;
       box-shadow: unset;
       &__nav{
+        display: none;
+      }
+      &__cities{
         display: none;
       }
       &__icon{
@@ -179,6 +380,9 @@ export default {
         display: block;
       }
 
+    }
+    .burger{
+      display: inherit;
     }
   }
     @media screen and(max-width: 1140px) {
