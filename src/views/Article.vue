@@ -2,7 +2,7 @@
     <section>
       <div class="article">
         <div class="row">
-            <div class="col-12 col-md-8">
+            <div class="col-12 col-lg-8">
               <div class="article-wrap">
                 <div class="article-img">
                   <img src="img\unsplash_aXbfOFQ_juU.png" alt="">
@@ -10,6 +10,34 @@
                 <div class="article-body">
                   <h1>What makes us different</h1>
                   <div class="content">
+                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                      <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                      </div>
+                      <div class="carousel-inner">
+                        <div class="carousel-item active">
+                          <img src="img/unsplash_aXbfOFQ_juU.png" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="img/unsplash_aXbfOFQ_juU.png" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="img/unsplash_aXbfOFQ_juU.png" class="d-block w-100" alt="...">
+                        </div>
+                      </div>
+                      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"  data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Предыдущий</span>
+                      </button>
+                      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"  data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Следующий</span>
+                      </button>
+                    </div>
+
+
                     <p>Believe it or not, copywriting is one of the most important content-creation skills a designer can possess. If you think about it, design exists to support and deliver content—not the other way around.</p>
                     <ul>
                       <li>Why consistent writing makes you a better designer</li>
@@ -48,7 +76,7 @@
               <DoctorCard></DoctorCard>
               <ClinicCard></ClinicCard>
             </div>
-            <div class="col-12 col-md-4 tablet-hide">
+            <div class="col-12 col-lg-4 tablet-hide">
               <div class="sub-news">
                 <div class="sub-news__list"> 
                   <div class="sub-news__item">
@@ -192,28 +220,6 @@ export default {
       recaptchaScript.setAttribute('src', '//www.instagram.com/embed.js')
       recaptchaScript.setAttribute('async', 'true' )
       document.head.appendChild(recaptchaScript)
-    // var iframe = document.querySelectorAll('iframe');
-    // console.log(iframe[1].contentWindow.document.body.offsetHeight)
-    // console.log(document.querySelectorAll('iframe')[1].contentWindow.document.body.offsetHeight)
-    // var $iframes = $( "iframe" );
-    // // Find & save the aspect ratio for all iframes
-    // $iframes.each(function () {
-    //   $( this ).data( "ratio", this.height / this.width )
-    //     // Remove the hardcoded width & height attributes
-    //     .removeAttr( "width" )
-    //     .removeAttr( "height" );
-    // });
-      
-    // // Resize the iframes when the window is resized
-    // $( window ).resize( function () {
-    //   $iframes.each( function() {
-    //     // Get the parent container's width
-    //     var width = $( this ).parent().width();
-    //     $( this ).width( width )
-    //       .height( width * $( this ).data( "ratio" ) );
-    //   });
-    // // Resize to fix all iframes on page load.
-    // }).resize();
   }
 }
 </script>
@@ -257,16 +263,7 @@ html, body{width:100%; height:100%; margin:0}
   }
 }
 .instagram-media{
-  // background: white;
-  // max-width: 540px;
-  // width: calc(100% - 2px);
-  // border-radius: 3px;
-  // border: 1px solid rgb(219, 219, 219);
-  // box-shadow: none;
-  // display: block;
-  // margin: 0 auto;
-  // padding: 0px;
-  // max-height: 900px;
+  min-width: none;
 }
 .youtube-media{
   width: 100%;
@@ -332,6 +329,20 @@ html, body{width:100%; height:100%; margin:0}
     max-width: 100%;
     width: 100%;
     background-color: $bg-color-3;
+  }
+}
+@media screen and(max-width: 992px) {
+  .tablet-hide{
+    display: none;
+  }
+}
+
+@media screen and(max-width: 576px) {
+  .article-body{
+    padding: 20px;
+  }
+  .youtube-media{
+    height: 250px;
   }
 }
 </style>

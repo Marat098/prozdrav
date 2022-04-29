@@ -56,12 +56,144 @@
                     </div>
                   </div>
                 </div>
-
-
               </div>
             </div>
-
           </div>
+          <div class="overlay-menu" id="overlay-menu">
+            <div>
+              <div class="head">
+                <div class="head__close-icon" id="close-overlay">
+                  <img src="fonts/mobile-arrow.svg" alt="">
+                </div>
+                <div class="head__main-icon-wrap">
+                  <img class="head__main-icon" src="fonts/Group 330.svg" alt="">
+                </div>
+              </div>
+
+              <nav class="menu-navigation " role='navigation'>
+                <ul class="menu-navigation__body">
+                  <li class="menu-navigation__item">
+                    <div class="item-icon"><img src="fonts/search-icon.svg" alt=""></div>
+                    <div class="menu-navigation__search-wrap"><input class="menu-navigation__search" placeholder="Поиск" type="text"></div>
+                  </li>
+                  <li class="menu-navigation__item">
+                    <div class="item-icon">
+                      <img src="fonts/location-icon.svg" alt="">
+                    </div>
+                    <div class="menu-navigation__select-city-wrap">
+                      <select class="menu-navigation__select-city" name="city" id="city">
+                        <option value="value1" selected> Алматы</option>
+                        <option value="value2" >Шымкент</option>
+                        <option value="value3">Астана</option>
+                      </select>
+                    </div>
+                  </li>
+                  <li class="menu-navigation__item">
+                    <a href="">
+                      <div class="item-icon"><img src="fonts/newspaper-icon.svg" alt=""></div>
+                      <div class="menu-navigation__item-body">
+                        <span>Новости</span>
+                        <img class="menu-navigation__item-arrow" src="fonts/mobile-arrow.svg" alt=""> 
+                      </div>
+                    </a>
+                  </li>
+                  <li class="menu-navigation__item">
+                    <a href="">
+                      <div class="item-icon"><img src="fonts/doctor-icon.svg" alt=""></div>
+                      <div class="menu-navigation__item-body">
+                        <span>Врачи</span>
+                        <img class="menu-navigation__item-arrow" src="fonts/mobile-arrow.svg" alt=""> 
+                      </div>
+                    </a>
+                  </li>
+                  <li class="menu-navigation__item">
+                    <a href="">
+                      <div class="item-icon"><img src="fonts/health-icon.svg" alt=""></div>
+                      <div class="menu-navigation__item-body">
+                        <span>Клиники</span>
+                        <img class="menu-navigation__item-arrow" src="fonts/mobile-arrow.svg" alt=""> 
+                      </div>
+                    </a>
+                  </li>
+                  <li class="menu-navigation__item">
+                    <a href="">
+                      <div class="item-icon"><img src="fonts/procedure-icon.svg" alt=""></div>
+                      <div class="menu-navigation__item-body">
+                        <span>Процедуры</span>
+                        <img class="menu-navigation__item-arrow" src="fonts/mobile-arrow.svg" alt=""> 
+                      </div>
+                    </a>
+                  </li>
+                  <li class="menu-navigation__item">
+                    <a href="">
+                      <div class="item-icon"><img src="fonts/diagnostic-icon.svg" alt=""></div>
+                      <div class="menu-navigation__item-body">
+                        <span>Диагностика</span>
+                        <img class="menu-navigation__item-arrow" src="fonts/mobile-arrow.svg" alt=""> 
+                      </div>
+                    </a>
+                  </li>
+                  <li class="menu-navigation__item">
+                    <a href="">
+                      <div class="item-icon"><img src="fonts/stock-market-icon.svg" alt=""></div>
+                      <div class="menu-navigation__item-body">
+                        <span>Акции и скидки</span>
+                        <img class="menu-navigation__item-arrow" src="fonts/mobile-arrow.svg" alt=""> 
+                      </div>
+                    </a>
+                  </li>
+
+                </ul>
+                <ul class="menu-navigation__body sub-navigation">
+                  <li class="menu-navigation__item">
+                    <a href="">
+                      <div class="item-icon"><img src="fonts/procedure-icon.svg" alt=""></div>
+                      <div class="menu-navigation__item-body">
+                        <span>Процедуры</span>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="menu-navigation__item">
+                    <a href="">
+                      <div class="item-icon"><img src="fonts/diagnostic-icon.svg" alt=""></div>
+                      <div class="menu-navigation__item-body">
+                        <span>Диагностика</span>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="menu-navigation__item">
+                    <a href="">
+                      <div class="item-icon"><img src="fonts/stock-market-icon.svg" alt=""></div>
+                      <div class="menu-navigation__item-body">
+                        <span>Акции и скидки</span>
+                      </div>
+                    </a>
+                  </li>
+
+                </ul>
+                <div class="mobile-social-icons ">
+                    <a class="social-icon" href="">
+                      <img src="fonts/youtube-icon.svg" alt="">
+                    </a>
+                    <a  class="social-icon" href="">
+                      <img src="fonts/vk-icon.svg" alt="">
+                    </a>
+                    <a  class="social-icon" href="">
+                      <img src="fonts/facebook-icon.svg" alt="">
+                    </a>
+                    <a  class="social-icon" href="">
+                      <img src="fonts/insta-icon.svg" alt="">
+                    </a>
+                    <a  class="social-icon" href="">
+                      <img src="fonts/itube-icon.svg" alt="">
+                    </a>
+                  </div>
+
+
+              </nav>
+              </div>  
+          </div>
+
         </header>
         <main>
             <router-view/>
@@ -156,20 +288,20 @@
                   <div class="footer-column__main-icon-wrap">
                     <img src= "fonts/main-icon.svg" width="350" height="80"  alt="" class="footer-column__main-icon" />
                   </div>
-                  <div class="footer-column__secondary-icons">
-                    <a href="">
+                  <div class="social-icons-wrap">
+                    <a class="social-icon" href="">
                       <img src="fonts/youtube-icon.svg" alt="">
                     </a>
-                    <a href="">
+                    <a  class="social-icon" href="">
                       <img src="fonts/vk-icon.svg" alt="">
                     </a>
-                    <a href="">
+                    <a  class="social-icon" href="">
                       <img src="fonts/facebook-icon.svg" alt="">
                     </a>
-                    <a href="">
+                    <a  class="social-icon" href="">
                       <img src="fonts/insta-icon.svg" alt="">
                     </a>
-                    <a href="">
+                    <a  class="social-icon" href="">
                       <img src="fonts/itube-icon.svg" alt="">
                     </a>
                   </div>
@@ -190,7 +322,29 @@
   </div>
 </template>
 <script>
+import $ from 'jquery'
 export default {
+
+  mounted(){
+    $('#burger').click(function() {
+      let overlayMenu = $('#overlay-menu'),
+          menuBurger = $('#burger');
+      
+      overlayMenu.addClass('open');
+      menuBurger.addClass('open');
+
+    })
+    $('#close-overlay').click(function() {
+      let overlayMenu = $('#overlay-menu'),
+          menuBurger = $('#burger');
+      
+        if(overlayMenu.hasClass('open')) {
+          overlayMenu.removeClass('open');
+          menuBurger.removeClass('open');
+        }
+    })
+
+  }
 }
 </script>
 
@@ -260,6 +414,141 @@ export default {
       width: 100%;
     }
   }
+  .overlay-menu {
+    z-index: 10000;
+    position: fixed;
+    background: #ecfaff;
+    height: 100%;
+    width: 80%;
+    z-index: 100; 
+    right: -100%;
+    transition: 0.35s;
+    border-radius: $main-border-radius;
+    top: 0;
+    overflow-y: scroll;
+  }
+  .head{
+    display: flex;
+    padding: $padding-md;
+    border-bottom: 2px solid #12112726;
+    &__close-icon{
+      display: flex;
+      justify-content: center;
+      img{
+        width: 30px
+      }
+    }
+    &__main-icon-wrap{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+    &__main-icon{
+      width: 110px;
+      height: 42px;
+      object-fit: fill;
+    }
+
+  }
+
+  .overlay-menu.open {
+    right: 0%;
+  }
+
+.menu-navigation {
+  &__body{
+    margin-bottom: 0;
+    padding: $padding-xl $padding-sm;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  &__item{
+    font-size: $font-size-md_2;
+    padding: $padding-sm $padding-lg-1;
+    background-color: $main-bg-color;
+    list-style-type: none;
+    display: flex;
+    a{    
+      display: flex;
+      width: 100%;
+    }
+  }
+  &__item-body{
+    width: 100%;
+    display: flex;
+    margin-left: $margin-md_1;
+    padding: $padding-sm;
+    justify-content: space-between;
+    align-items: center;
+
+  }
+  &__item-arrow{
+    width: 17px;
+    height: 17px;
+  }
+  &__search-wrap{
+    width: 100%;
+    background: #E6E6E6;
+    border-radius: 25px;
+  }
+  &__search{
+    width: 100%;
+    padding: $padding-sm;
+    font-size: 16px;
+    outline: none;
+    border: $main-bg-color;
+    background: #E6E6E6;
+    border-radius: 25px;
+    margin-left: $margin-md_1;
+  }
+  &__select-city-wrap{
+    width: 100%;
+    margin-left: $margin-md_1;
+  }
+  &__select-city{
+    padding: $padding-sm;
+    width: 100%;
+    border: none;
+    font-size: $font-size-md_2;
+    background-color: $main-bg-color;
+  }
+  &__select-city:focus-visible{
+      outline:none;
+    }
+  &__select-city::after{
+      color: #e02b2b!important;
+  }
+  
+}
+.sub-navigation{
+  margin-top: 30px;
+}
+.item-icon{
+  align-self: center;
+  img{
+
+  }
+}
+
+
+#overlay-menu nav ul li a:after {
+  content: ' ';
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: #fff;
+  transition: 0.25s;
+}
+
+#overlay-menu nav ul li a:hover:after {
+  width: 100%;
+}
+
+
   .footer-body{
     margin-top: 10px;
     padding: 20px;
@@ -303,9 +592,15 @@ export default {
       width: 100%;
       max-width: 350px;
     }
-    &__secondary-icons{
+  }
+  .social-icons-wrap{
 
-    }
+  }
+  .social-icon{
+    margin-left: $margin-sm;
+  }
+  .mobile-social-icons {
+    text-align: center;
   }
   .footer-text-wrap{
     padding: 20px;

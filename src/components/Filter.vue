@@ -91,6 +91,7 @@ export default {
         appearance: none;
         font-size: $font-size-md_3;
         color: rgba(18, 17, 39, 0.6);
+        background-color: $main-bg-color;
     }
     &__select-font{
         background-image: url(/img/arrow.314ffd53.svg);
