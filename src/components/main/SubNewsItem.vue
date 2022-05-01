@@ -51,7 +51,7 @@ export default {
 @media screen and(max-width: 768px){
     .news-item{
         flex: 0 0 54%;
-        margin: auto;
+        margin: 5px;
         &__title{
             font-weight: 500;
             font-size: $font-size-sm;

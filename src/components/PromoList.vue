@@ -14,7 +14,7 @@ export default {
 <style lang="scss" scoped>
 .promo-list{
     display: flex;
-    gap: $gap-xl;
+    // gap: $gap-xl;
     margin-top: $margin-xl;
 }
 @media screen and(max-width: 768px){

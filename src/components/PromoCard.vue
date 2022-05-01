@@ -77,6 +77,7 @@ export default {
 @media screen and(max-width: 768px){
     .promo-item{
         width: 250px;
+        margin-right: 10px;
         &__body{
             padding: $padding-md;
             min-width: 150px;
