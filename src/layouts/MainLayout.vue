@@ -201,7 +201,7 @@
         <footer class="footer">
           <div class="footer-body">
             <div class="footer-row footer-line">
-              <div class="footer-column">
+              <div class="footer-column mobile-hide">
                 <ul class="footer-column__body">
                   <li class="footer-column__body-item">
                     <a class="footer-column__body-link" href="/">
@@ -225,7 +225,7 @@
                   </li>
                 </ul>
               </div>
-              <div class="footer-column">
+              <div class="footer-column mobile-hide">
                 <ul class="footer-column__body">
                   <li class="footer-column__body-item">
                     <a class="footer-column__body-link" href="/">
@@ -254,7 +254,7 @@
                   </li>
                 </ul>
               </div>
-              <div class="footer-column">
+              <div class="footer-column mobile-hide">
                 <ul class="footer-column__body">
                   <li class="footer-column__body-item">
                     <a class="footer-column__body-link" href="/">
@@ -687,6 +687,12 @@ export default {
           }
         }
     }
+
+  @media screen and(max-width: 576px) {
+    .footer-column__main-icon-wrap{
+      margin-left: 0;
+    }
+  }
 </style>
 
 //  $('document').ready(function() {
